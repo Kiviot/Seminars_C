@@ -17,3 +17,12 @@
 // }
 // else System.Console.WriteLine("Folse");
 
+System.Console.WriteLine("Write your number: ");
+int positiveNumber = Convert.ToInt32(Console.ReadLine());
+if (positiveNumber <1) positiveNumber *= -1;
+int negativeNumber = positiveNumber * (-1);
+while (negativeNumber <= positiveNumber)
+{
+    System.Console.Write(negativeNumber);
+    negativeNumber += 1;
+}
