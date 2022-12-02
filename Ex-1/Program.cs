@@ -1,4 +1,6 @@
-﻿int number = 5; //тип данных имя = значение
-int result = number * number; //результат возведения в квадрат
+﻿Console.Write("Write number: ");
+int number = Convert.ToInt32(Console.ReadLine()); //тип данных имя = значение
+//int result = number * number; //результат возведения в квадрат
+double result = Math.Pow(number, 2);// вариант через функцию: результат возведения в квадрат
 Console.WriteLine(number); //вывод числа
 System.Console.WriteLine(result);//вывод результата
