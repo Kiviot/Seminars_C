@@ -175,3 +175,22 @@
 // System.Console.WriteLine(pos);
 
 
+// int number = new Random().Next(10, 100);
+// // Console.WriteLine(number);
+
+// int FirstDigit = number / 10; //первая цифра рандомного числа
+
+// int SecondDigit = number % 10;//вторая цифра рандомного числа
+
+// // Console.WriteLine(FirstDigit);
+// // Console.WriteLine(SecondDigit);
+
+// int max = FirstDigit; //пусть максимум - первая цифра числа
+
+// if(SecondDigit > max)
+// {
+//     max = SecondDigit;
+// }
+
+// Console.WriteLine("Исходное число равно: " + number);
+// Console.WriteLine("Максимальная цифра в исходном числе: " + max);
