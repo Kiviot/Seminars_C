@@ -194,3 +194,52 @@
 
 // Console.WriteLine("Исходное число равно: " + number);
 // Console.WriteLine("Максимальная цифра в исходном числе: " + max);
+
+
+// int number = new Random().Next(100, 1000);
+// int FirstDigit = number / 100;
+// int LastDigit = number % 10;
+// System.Console.WriteLine(number);
+// System.Console.WriteLine(FirstDigit);
+// System.Console.WriteLine(LastDigit);
+// int NewNumber = (FirstDigit * 10) + LastDigit;
+// System.Console.WriteLine(NewNumber);
+
+// int FirstNumber = new Random().Next(10, 99);
+// int SecondNumber = new Random().Next(10, 99);
+// System.Console.WriteLine(FirstNumber);
+// System.Console.WriteLine(SecondNumber);
+// int Del = SecondNumber % FirstNumber; 
+
+// if (Del == 0)
+// {
+//     System.Console.WriteLine(SecondNumber + " кратно " + FirstNumber);
+// }
+// else
+// {
+//     System.Console.WriteLine("Остаток от деления равен: " + Del);
+// }
+
+
+// int number = new Random().Next(10, 1000);
+// //int number = 161;
+// int FirstDigitDel = number % 7;
+// int SecondDigitDel = number % 23;
+// System.Console.WriteLine(number);
+// if(FirstDigitDel == 0 && SecondDigitDel == 0)
+// {
+// //    if(SecondDigitDel == 0);
+//     System.Console.WriteLine(FirstDigitDel);
+//     System.Console.WriteLine(SecondDigitDel);
+//     System.Console.WriteLine("Yep");
+// }
+// else
+// {
+//     System.Console.WriteLine(FirstDigitDel);
+//     System.Console.WriteLine(SecondDigitDel);
+//     System.Console.WriteLine("Nope");
+// }
+// //System.Console.WriteLine(FirstDigitDel);
+// //System.Console.WriteLine(SecondDigitDel);
+// //System.Console.WriteLine("Nope");
+
