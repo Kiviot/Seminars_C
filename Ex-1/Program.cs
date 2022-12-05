@@ -244,6 +244,8 @@
 // //System.Console.WriteLine(SecondDigitDel);
 // //System.Console.WriteLine("Nope");
 
+==========================================================================================
+
 //HomeWork
 //Ex10
 // int number = new Random().Next(100, 1000);
@@ -251,8 +253,11 @@
 // System.Console.WriteLine(number);
 // System.Console.WriteLine("второе число равно: " + del);
 
-//Ex13
+==========================================================================================
+
+// //Ex13
 // int number = new Random().Next(1000, 1000000);
+// //int number = 24;
 // int del = number;
 // int index = 0;
 // while  (del / 10 != 0)
@@ -260,15 +265,26 @@
 //         del = del / 10;
 //     index ++;
 // }
+// if ((index+1) < 3) System.Console.WriteLine("Третьей цифры нет. В текущем числе " + (index + 1) + " знака");
+// else
+// {
+//     int stepen = Convert.ToInt32(Math.Pow(10, (index-1)));
+//     int thirdDigit = (number % stepen)/(stepen / 10);
 
-// int stepen = Convert.ToInt32(Math.Pow(10, (index-1)));
-// int thirdDigit = (number % stepen)/(stepen / 10);
+//     System.Console.WriteLine(number);
+//     //System.Console.WriteLine(stepen);
+//     System.Console.WriteLine("количество знаков введенного числа: " + (index + 1));
+//     System.Console.WriteLine("третья цифра равна: " + thirdDigit);
+// }
+// // int stepen = Convert.ToInt32(Math.Pow(10, (index-1)));
+// // int thirdDigit = (number % stepen)/(stepen / 10);
 
-// System.Console.WriteLine(number);
-// //System.Console.WriteLine(stepen);
-// System.Console.WriteLine("количество знаков введенного числа: " + (index + 1));
-// System.Console.WriteLine("третья цифра равна: " + thirdDigit);
+// // System.Console.WriteLine(number);
+// // //System.Console.WriteLine(stepen);
+// // System.Console.WriteLine("количество знаков введенного числа: " + (index + 1));
+// // System.Console.WriteLine("третья цифра равна: " + thirdDigit);
 
+==========================================================================================
 // //Ex15
 // System.Console.WriteLine("Введите цифровое значение дня недели: ");
 // int day = Convert.ToInt32(Console.ReadLine());
@@ -281,3 +297,4 @@
 // if (day>=1 && day<6) System.Console.WriteLine("Сегогдня будний день " + day);
 // else System.Console.WriteLine("Сегодня выходной " + day);
 // //System.Console.WriteLine(day);
+==========================================================================================
