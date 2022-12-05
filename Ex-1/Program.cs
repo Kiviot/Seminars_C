@@ -196,6 +196,7 @@
 // Console.WriteLine("Максимальная цифра в исходном числе: " + max);
 
 
+//Задача №11
 // int number = new Random().Next(100, 1000);
 // int FirstDigit = number / 100;
 // int LastDigit = number % 10;
@@ -204,7 +205,7 @@
 // System.Console.WriteLine(LastDigit);
 // int NewNumber = (FirstDigit * 10) + LastDigit;
 // System.Console.WriteLine(NewNumber);
-
+//Задача №12
 // int FirstNumber = new Random().Next(10, 99);
 // int SecondNumber = new Random().Next(10, 99);
 // System.Console.WriteLine(FirstNumber);
@@ -220,7 +221,7 @@
 //     System.Console.WriteLine("Остаток от деления равен: " + Del);
 // }
 
-
+//Задача №14
 // int number = new Random().Next(10, 1000);
 // //int number = 161;
 // int FirstDigitDel = number % 7;
