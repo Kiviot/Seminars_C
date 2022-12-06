@@ -338,4 +338,56 @@
 // double Len = Math.Sqrt(Convert.ToInt32(Math.Pow(x1x2, 2)) + Convert.ToInt32(Math.Pow(y1y2, 2)));
 // System.Console.WriteLine("Длинна отрезка равна: " + Math.Round(Len, 3));
 // ==========================================================================================
-
+//Ex22
+// int N = new Random().Next(-10, 10);
+// int index = 0;
+// System.Console.Write(N + " -> ");
+// if(N < 0) N = N * (-1);
+// while (index <= N)
+// {
+//     int Kv = Convert.ToInt32(Math.Pow(index, 2));
+//     System.Console.Write(Kv + " ");
+//     index++;
+// }
+// ==========================================================================================
+// var2
+// int N = new Random().Next(-10, 10);
+// int index = 0;
+// System.Console.Write(N + " -> ");
+// if(N > 0)
+// {
+//     while (index <= N)
+// {
+//     int Kv = Convert.ToInt32(Math.Pow(index, 2));
+//     System.Console.Write(Kv + " ");
+//     index++;
+// }
+// }
+// else
+// {
+//     while (N <= index)
+// {
+//     int Kv = Convert.ToInt32(Math.Pow(N, 2));
+//     System.Console.Write(Kv + " ");
+//     N++;
+// }
+// }
+// ==========================================================================================
+// var3
+// int N = new Random().Next(-10, 10);
+// System.Console.Write(N + " -> ");
+// if(N > 0)
+// {
+//     for (int i = 0; i <= N; i++)
+//     {
+//         System.Console.Write(Math.Pow(i, 2) + " ");
+//     }
+// }
+// else
+// {
+//     for (int i = 0; i >= N; i--)
+//     {
+//         System.Console.Write(Math.Pow(i, 2) + " ");
+//     }
+// }
+// ==========================================================================================
