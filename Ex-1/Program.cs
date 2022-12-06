@@ -391,3 +391,84 @@
 //     }
 // }
 // ==========================================================================================
+//HomeWork
+// // Ex19
+// // int N = new Random().Next(10000, 100000);
+// System.Console.WriteLine("введите пятизначное число: ");
+// int N = Convert.ToInt32(Console.ReadLine());
+// // System.Console.Write(N);
+// int del = N;
+// int index = 0;
+// while  (del / 10 != 0)
+// {
+//         del = del / 10;
+//         index ++;
+// }
+// if ((index+1) == 5)
+// {
+//     System.Console.WriteLine("количество знаков введенного числа: " + (index + 1));
+//     int NewNumber = ((N % 10)*(10000)) + (((N % 100) - (N % 10))*(100)) + ((N % 1000) - (N % 100)) + (((N % 10000) - (N % 1000)) / (100)) + (((N % 100000) - (N % 10000)) / (10000));
+//     System.Console.WriteLine(NewNumber);
+//     if(N == NewNumber) System.Console.WriteLine("Число является полиндромом");
+//     else System.Console.WriteLine("Число НЕ является полиндромом");
+// }
+// else System.Console.WriteLine("Это не пятизанчное число. В текущем числе " + (index + 1) + " знака");
+// ==========================================================================================
+//Ex 21
+
+
+// System.Console.WriteLine("Введите координату X1 по оси X:");
+// int x1 = Convert.ToInt32(Console.ReadLine());
+// // int x1 = new Random().Next(-100, 100);
+// // System.Console.WriteLine("координата X1 по оси X = " + x1);
+// System.Console.WriteLine("Введите координату Y1 по оси Y:");
+// int y1 = Convert.ToInt32(Console.ReadLine());
+// // int y1 = new Random().Next(-100, 100);
+// // System.Console.WriteLine("координата Y1 по оси Y = " + y1);
+// System.Console.WriteLine("Введите координату Z1 по оси Z:");
+// int z1 = Convert.ToInt32(Console.ReadLine());
+// // int z1 = new Random().Next(-100, 100);
+// // System.Console.WriteLine("координата Z1 по оси Z = " + z1);
+// System.Console.WriteLine("Введите координату X2 по оси X:");
+// int x2 = Convert.ToInt32(Console.ReadLine());
+// // int x2 = new Random().Next(-100, 100);
+// // System.Console.WriteLine("координата X2 по оси X = " + x2);
+// System.Console.WriteLine("Введите координату Y2 по оси Y:");
+// int y2 = Convert.ToInt32(Console.ReadLine());
+// // int y2 = new Random().Next(-100, 100);
+// // System.Console.WriteLine("координата Y2 по оси Y = " + y2);
+// System.Console.WriteLine("Введите координату Z2 по оси Z:");
+// int z2 = Convert.ToInt32(Console.ReadLine());
+// // int z2 = new Random().Next(-100, 100);
+// // System.Console.WriteLine("координата Z2 по оси Z = " + z2);
+
+// int x1x2 = x2 - x1;
+// int y1y2 = y2 - y1;
+// int z1z2 = z2 - z1;
+
+// // int KvLen = Convert.ToInt32(Math.Pow(x1x2, 2)) + Convert.ToInt32(Math.Pow(y1y2, 2));
+// // System.Console.WriteLine("Квадрат гипотенузы равен: " + KvLen);
+
+// // double Len = Math.Sqrt(KvLen);
+// double Len = Math.Sqrt(Convert.ToInt32(Math.Pow(x1x2, 2)) + Convert.ToInt32(Math.Pow(y1y2, 2)) + Convert.ToInt32(Math.Pow(z1z2, 2)));
+// System.Console.WriteLine("Длинна отрезка равна: " + Math.Round(Len, 3));
+
+// ==========================================================================================
+// //Ex 23
+// // var1
+// int N = new Random().Next(-10, 10);
+// System.Console.Write(N + " -> ");
+// if(N > 0)
+// {
+//     for (int i = 0; i <= N; i++)
+//     {
+//         System.Console.Write(Math.Pow(i, 3) + " ");
+//     }
+// }
+// else
+// {
+//     for (int i = 0; i >= N; i--)
+//     {
+//         System.Console.Write(Math.Pow(i, 3) + " ");
+//     }
+// }
