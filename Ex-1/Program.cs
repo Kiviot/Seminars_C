@@ -244,7 +244,7 @@
 // //System.Console.WriteLine(SecondDigitDel);
 // //System.Console.WriteLine("Nope");
 
-==========================================================================================
+//==========================================================================================
 
 //HomeWork
 //Ex10
@@ -253,10 +253,10 @@
 // System.Console.WriteLine(number);
 // System.Console.WriteLine("второе число равно: " + del);
 
-==========================================================================================
+//==========================================================================================
 
 // //Ex13
-// int number = new Random().Next(1000, 1000000);
+// int number = new Random().Next(-10000, 1000000);
 // //int number = 24;
 // int del = number;
 // int index = 0;
@@ -276,15 +276,15 @@
 //     System.Console.WriteLine("количество знаков введенного числа: " + (index + 1));
 //     System.Console.WriteLine("третья цифра равна: " + thirdDigit);
 // }
-// // int stepen = Convert.ToInt32(Math.Pow(10, (index-1)));
-// // int thirdDigit = (number % stepen)/(stepen / 10);
+// int stepen = Convert.ToInt32(Math.Pow(10, (index-1)));
+// int thirdDigit = (number % stepen)/(stepen / 10);
 
-// // System.Console.WriteLine(number);
-// // //System.Console.WriteLine(stepen);
-// // System.Console.WriteLine("количество знаков введенного числа: " + (index + 1));
-// // System.Console.WriteLine("третья цифра равна: " + thirdDigit);
+// System.Console.WriteLine(number);
+// //System.Console.WriteLine(stepen);
+// System.Console.WriteLine("количество знаков введенного числа: " + (index + 1));
+// System.Console.WriteLine("третья цифра равна: " + thirdDigit);
 
-==========================================================================================
+//==========================================================================================
 // //Ex15
 // System.Console.WriteLine("Введите цифровое значение дня недели: ");
 // int day = Convert.ToInt32(Console.ReadLine());
@@ -297,4 +297,45 @@
 // if (day>=1 && day<6) System.Console.WriteLine("Сегогдня будний день " + day);
 // else System.Console.WriteLine("Сегодня выходной " + day);
 // //System.Console.WriteLine(day);
-==========================================================================================
+//==========================================================================================
+// System.Console.WriteLine("Введите координату по оси X:");
+// int x = Convert.ToInt32(Console.ReadLine());
+// System.Console.WriteLine("Введите координату по оси Y:");
+// int y = Convert.ToInt32(Console.ReadLine());
+
+// if(x > 0 && y > 0) System.Console.WriteLine("1 четверть");
+// else if(x < 0 && y > 0) System.Console.WriteLine("2 четверть");
+// else if(x < 0 && y < 0) System.Console.WriteLine("3 четверть");
+// else if(x > 0 && y < 0) System.Console.WriteLine("4 четверть");
+// else if(x = 0 && y = 0) System.Console.WriteLine("На пересечении осей X и Y");
+//==========================================================================================
+//ClassWork
+//
+// // System.Console.WriteLine("Введите координату X1 по оси X:");
+// // int x1 = Convert.ToInt32(Console.ReadLine());
+// int x1 = new Random().Next(-100, 100);
+// System.Console.WriteLine("координата X1 по оси X = " + x1);
+// // System.Console.WriteLine("Введите координату Y1 по оси Y:");
+// // int y1 = Convert.ToInt32(Console.ReadLine());
+// int y1 = new Random().Next(-100, 100);
+// System.Console.WriteLine("координата Y1 по оси Y = " + y1);
+// // System.Console.WriteLine("Введите координату X2 по оси X:");
+// // int x2 = Convert.ToInt32(Console.ReadLine());
+// int x2 = new Random().Next(-100, 100);
+// System.Console.WriteLine("координата по оси X1 = " + x2);
+// // System.Console.WriteLine("Введите координату Y2 по оси Y:");
+// // int y2 = Convert.ToInt32(Console.ReadLine());
+// int y2 = new Random().Next(-100, 100);
+// System.Console.WriteLine("координата Y2 = " + y2);
+
+// int x1x2 = x2 - x1;
+// int y1y2 = y2 - y1;
+
+// // int KvLen = Convert.ToInt32(Math.Pow(x1x2, 2)) + Convert.ToInt32(Math.Pow(y1y2, 2));
+// // System.Console.WriteLine("Квадрат гипотенузы равен: " + KvLen);
+
+// // double Len = Math.Sqrt(KvLen);
+// double Len = Math.Sqrt(Convert.ToInt32(Math.Pow(x1x2, 2)) + Convert.ToInt32(Math.Pow(y1y2, 2)));
+// System.Console.WriteLine("Длинна отрезка равна: " + Math.Round(Len, 3));
+// ==========================================================================================
+
