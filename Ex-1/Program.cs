@@ -5,6 +5,8 @@
 // Console.WriteLine(number); //вывод числа
 // System.Console.WriteLine(result);//вывод результата
 
+// ==========================================================================================
+
 // Console.Write("Write first number: ");
 // int firstNumber = Convert.ToInt32(Console.ReadLine());
 
@@ -17,6 +19,8 @@
 // }
 // else System.Console.WriteLine("Folse");
 
+// ==========================================================================================
+
 // System.Console.WriteLine("Write your number: ");
 // int positiveNumber = Convert.ToInt32(Console.ReadLine());
 // if (positiveNumber <1) positiveNumber *= -1;
@@ -26,6 +30,8 @@
 //     System.Console.Write(negativeNumber + " ");
 //     negativeNumber += 1;
 // }
+
+// ==========================================================================================
 
 // int a1 = 15;
 // int b1 = 21;
@@ -51,6 +57,7 @@
 
 // System.Console.WriteLine(max);
 
+// ==========================================================================================
 
 // int Max(int arg1, int arg2, int arg3)
 // {
@@ -59,6 +66,8 @@
 //     if(arg3 > result) result = arg3;
 //     return result;
 // }
+
+// ==========================================================================================
 
 // int a1 = 15;
 // int b1 = 21;
@@ -82,7 +91,7 @@
 
 // System.Console.WriteLine(max);
 
-
+// ==========================================================================================
 
 
 // int Max(int arg1, int arg2, int arg3)
@@ -104,7 +113,7 @@
 
 // System.Console.WriteLine(max);
 
-
+// ==========================================================================================
 
 // int[] array = {11, 21, 31, 14, 18, 15, 61, 17, 18, 19};
 
@@ -122,7 +131,8 @@
 //     }
 //     index++;
 // }
-// test
+
+// ==========================================================================================
 
 // void FillArray(int[] collection)
 // {
@@ -134,8 +144,6 @@
 //         index++;
 //     }
 // }
-
-
 // void PrintArray(int[] col)
 // {
 //     int count = col.Length;
@@ -146,8 +154,6 @@
 //         position++;
 //     }
 // }
-
-
 // int indexOf(int[] collection, int find)
 // {
 //     int count = collection.Length;
@@ -174,6 +180,7 @@
 // int pos = indexOf(array, 4);
 // System.Console.WriteLine(pos);
 
+// ==========================================================================================
 
 // int number = new Random().Next(10, 100);
 // // Console.WriteLine(number);
@@ -195,6 +202,7 @@
 // Console.WriteLine("Исходное число равно: " + number);
 // Console.WriteLine("Максимальная цифра в исходном числе: " + max);
 
+// ==========================================================================================
 
 //Задача №11
 // int number = new Random().Next(100, 1000);
@@ -220,6 +228,8 @@
 // {
 //     System.Console.WriteLine("Остаток от деления равен: " + Del);
 // }
+
+// ==========================================================================================
 
 //Задача №14
 // int number = new Random().Next(10, 1000);
@@ -472,3 +482,4 @@
 //         System.Console.Write(Math.Pow(i, 3) + " ");
 //     }
 // }
+// ==========================================================================================
