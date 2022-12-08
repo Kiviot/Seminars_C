@@ -1,2 +1,8 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿// Lection 3
+void Method1()
+{
+    System.Console.WriteLine("Autor ...");
+}
+Method1();
+
+
