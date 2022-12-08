@@ -183,3 +183,41 @@
 // PrintArray(array);
 
 // ==========================================================================================
+
+// Упорядочивание массива от большего к меньшему
+
+int[] array = {2, 5, 4, 3, 2, 0, 7, 6, 8, 1};
+
+void PrintArray(int[] array)
+{
+    for (int i = 0; i < array.Length; i++)
+    {
+        System.Console.Write($"{array[i]} ");
+    }
+    System.Console.WriteLine();//строка для разделения изначального массива от нового
+}
+
+void SelectionSort(int[] array)
+{
+    for (int i = 0; i < array.Length -1; i++)
+    {
+        int maxPosition = i;//считаем что на первой позиции находится максимальный элемент массива
+        
+        for (int j = i + 1; j < array.Length; j++)//поиск максимального элемента массива
+        {
+            if(array[j] > array[maxPosition]) maxPosition = j;//берем следующий элемент и сравниваем его с предыдущим (1 and 0; 2 and 1 ...)
+        }
+        
+        int temporary = array[i];//вводим переменную, которая будет временно хранить макс значения
+        array[i] = array[maxPosition];
+        array[maxPosition] = temporary;
+    }
+}
+
+
+PrintArray(array);
+SelectionSort(array);
+
+PrintArray(array);
+
+// ==========================================================================================
