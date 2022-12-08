@@ -188,7 +188,7 @@
 
 int[] array = {2, 5, 4, 3, 2, 0, 7, 6, 8, 1};
 
-void PrintArray(int[] array)
+void PrintArray(int[] array)//вводим метод для вывода массива
 {
     for (int i = 0; i < array.Length; i++)
     {
