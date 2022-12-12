@@ -520,19 +520,38 @@
 4 -> 10
 8 -> 36
 */
-int GetSum(int A)
+// int GetSum(int A)
+// {
+//     int sum = 0;
+//     for (int i = 1; i <= A; i++)
+//     {
+//         sum += i; // sum = sum + i
+//     }
+//     return sum;
+// }
+// System.Console.Write("Write number A: ");
+// int N = int.Parse(Console.ReadLine()!);// int.Parse == Convert.ToInt32.
+// System.Console.WriteLine(GetSum(N));
+// ==========================================================================================
+/*
+Задача 26: Напишите программу, которая принимает
+на вход число и выдаёт количество цифр в числе.
+456 -> 3
+78 -> 2
+89126 -> 5 
+*/
+int SumIndex(int A)
 {
-    int sum = 0;
-    for (int i = 1; i <= A; i++)
+    int sum = A;
+    int index = 1; 
+    while (sum/10 != 0)
     {
-        sum += i; // sum = sum + i
+        sum = sum/10;
+        index++;
     }
-    return sum;
+    return index;
 }
 System.Console.Write("Write number A: ");
 int N = int.Parse(Console.ReadLine()!);// int.Parse == Convert.ToInt32.
-System.Console.WriteLine(GetSum(N));
-// ==========================================================================================
-
-
+System.Console.WriteLine(SumIndex(N));
 // ==========================================================================================
