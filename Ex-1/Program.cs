@@ -681,26 +681,133 @@
 1, 2, 5, 7, 19 -> [1, 2, 5, 7, 19]
 6, 1, 33 -> [6, 1, 33]
 */
-int[] GetArray(int length, int start, int fin)
-{
+// int[] GetArray(int length, int start, int fin)
+// {
     
-    int[] array = new int[length]; 
-    for (int i = 0; i < array.Length; i++) 
-    {
-        array[i] = new Random().Next(start, fin+1);
-    }
-    return array;
-}
-Console.WriteLine("Введите длину массива: ");
-int length = int.Parse(Console.ReadLine()!);
-Console.WriteLine("Введите левую границу диапазона: ");
-int start = int.Parse(Console.ReadLine()!);
-Console.WriteLine("Введите правую границу диапазона: ");
-int fin = int.Parse(Console.ReadLine()!);
+//     int[] array = new int[length]; 
+//     for (int i = 0; i < array.Length; i++) 
+//     {
+//         array[i] = new Random().Next(start, fin+1);
+//     }
+//     return array;
+// }
+// Console.WriteLine("Введите длину массива: ");
+// int length = int.Parse(Console.ReadLine()!);
+// Console.WriteLine("Введите левую границу диапазона: ");
+// int start = int.Parse(Console.ReadLine()!);
+// Console.WriteLine("Введите правую границу диапазона: ");
+// int fin = int.Parse(Console.ReadLine()!);
 
-var str = string.Join(", ", GetArray(length, start, fin));
-System.Console.Write("[" + str + "]");
+// var str = string.Join(", ", GetArray(length, start, fin));
+// System.Console.Write("[" + str + "]");
 
 // ==========================================================================================
 // ==========================================================================================
 //ClassWork
+/*
+Задача 31: Задайте массив из 12 элементов, заполненный случайными числами из промежутка [-9, 9]. 
+Найдите сумму отрицательных и положительных элементов массива.
+Например, в массиве [3,9,-8,1,0,-7,2,-1,8,-3,-1,6] сумма положительных чисел равна 29, сумма отрицательных равна -20.
+*/
+// int[] GetArray(int len, int start, int fin)
+// {
+//     int[] array = new int[len];
+//     for (int i = 0; i < array.Length; i++)
+//     {
+//         array[i] = new Random().Next(start, fin + 1);
+//     }
+//     return array;
+// }
+
+// Console.WriteLine("Введите длину массива: ");
+// int length = int.Parse(Console.ReadLine()!);
+// Console.WriteLine("Введите левую границу диапазона: ");
+// int start = int.Parse(Console.ReadLine()!);
+// Console.WriteLine("Введите правую границу диапазона: ");
+// int fin = int.Parse(Console.ReadLine()!);
+
+
+
+// int[] ResultArray = GetArray(length, start, fin);
+// System.Console.WriteLine(string.Join(", ", ResultArray));
+
+// int sumOtr = 0;
+// int sumPol = 0;
+// for (int j = 0; j < ResultArray.Length; j++)
+// {
+//     if (ResultArray[j] < 0)
+//     {
+//         sumOtr += ResultArray[j];
+//     }
+    
+//     else
+//     {
+//         sumPol += ResultArray[j];
+//     }
+// }
+//     System.Console.Write($"Сумма отрицательных чисел: {sumOtr}");
+//     System.Console.WriteLine();
+//     System.Console.Write($"Сумма положительных чисел:  {sumPol}");
+
+// ==========================================================================================
+
+// int size = 12;
+
+// int[] array = new int[size];//создание массива из 12 элементов равных 0 [0, 0, 0, ..., 0]
+
+// ==========================================================================================
+//Задача 31 Var2
+// int[] GetArray(int size, int minValue, int maxValue) //size, minValue, maxValue
+// {
+//     int[] array = new int[size];
+//     for (int i = 0; i < size; i++)
+//     {
+//         array[i] = new Random().Next(minValue, maxValue + 1);
+//     }
+//     return array;
+// }
+// int[] resultArray = GetArray(12, -9, 9);
+// System.Console.WriteLine(string.Join(", ", resultArray));
+
+// int resultPositive = 0;
+// int resultNegative = 0;
+// for (int j = 0; j < resultArray.Length; j++)
+// {
+//     if(resultArray[j] > 0)
+//     {
+//         resultPositive += resultArray[j];
+//     }
+//     else resultNegative += resultArray[j];
+// }
+// System.Console.WriteLine($"сумма отр. чисел:  {resultNegative}, сумма пол. чисел {resultPositive}");
+
+// ==========================================================================================
+//Задача 31 Var3
+
+// int[] GetArray(int size, int minValue, int maxValue) //size, minValue, maxValue
+// {
+//     int[] array = new int[size];
+//     for (int i = 0; i < size; i++)
+//     {
+//         array[i] = new Random().Next(minValue, maxValue + 1);
+//     }
+//     return array;
+// }
+// int[] resultArray = GetArray(12, -9, 9);
+// System.Console.WriteLine(string.Join(", ", resultArray));
+
+// int resultPositive = 0;
+// int resultNegative = 0;
+
+// for (int j = 0; j < resultArray.Length; j++)
+// {
+//     resultPositive += resultArray[j] > 0 ? resultArray[j] : 0;
+//     //resultArray[j] > 0 (истина), тогда resultPositive += resultArray[j]
+//     //resultArray[j] > 0 (ложь), тогда resultPositive += 0
+//     resultNegative += resultArray[j] < 0 ? resultArray[j] : 0;
+//     //resultArray[j] < 0 (истина), тогда resultNegative += resultArray[j]
+//     //resultArray[j] < 0 (ложь), тогда resultNegative += 0
+// }
+// System.Console.WriteLine($"сумма отр. чисел:  {resultNegative}, сумма пол. чисел {resultPositive}");
+
+// ==========================================================================================
