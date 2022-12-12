@@ -540,18 +540,33 @@
 78 -> 2
 89126 -> 5 
 */
-int SumIndex(int A)
+// int SumIndex(int A)
+// {
+//     int sum = A;
+//     int count = 1; 
+//     while (sum/10 != 0)
+//     {
+//         sum = sum/10;
+//         count++;
+//     }
+//     return count;
+// }
+// System.Console.Write("Write number A: ");
+// int N = int.Parse(Console.ReadLine()!);// int.Parse == Convert.ToInt32.
+// System.Console.WriteLine(SumIndex(N));
+// ==========================================================================================
+//Задача № 28 
+//На вход число N, на выходе произведение чисел от 1 до N
+
+int multiplierNumber(int N)
 {
-    int sum = A;
-    int index = 1; 
-    while (sum/10 != 0)
+    int multiplier = 1;
+    for (int i = 1; i <= N; i++)
     {
-        sum = sum/10;
-        index++;
+        multiplier *= i;
     }
-    return index;
+    return multiplier;
 }
 System.Console.Write("Write number A: ");
 int N = int.Parse(Console.ReadLine()!);// int.Parse == Convert.ToInt32.
-System.Console.WriteLine(SumIndex(N));
-// ==========================================================================================
+System.Console.WriteLine(multiplierNumber(N));
