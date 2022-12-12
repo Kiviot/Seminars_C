@@ -619,17 +619,56 @@
 Задача 27: Напишите функцию и запустите ее, которая
 принимает на вход число и выдаёт сумму цифр в числе.
 */
-int sumDigit(int N)
-{
-    int sum = N % 10;
-    int number = N;
-    while (number / 10 != 0)
-    {
-        number /= 10;
-        sum += number % 10;
-    }
-    return sum;
-}
-System.Console.Write("Write number N: ");
-int a = int.Parse(Console.ReadLine()!);// int.Parse == Convert.ToInt32.
-System.Console.WriteLine(sumDigit(a));
+// int sumDigit(int N)
+// {
+//     int sum = N % 10;
+//     int number = N;
+//     while (number / 10 != 0)
+//     {
+//         number /= 10;
+//         sum += number % 10;
+//     }
+//     return sum;
+// }
+// System.Console.Write("Write number N: ");
+// int a = int.Parse(Console.ReadLine()!);// int.Parse == Convert.ToInt32.
+// System.Console.WriteLine(sumDigit(a));
+// ==========================================================================================
+/*
+Задача 29: Напишите программу, которая задаёт массив
+из 8 элементов и выводит их на экран.
+1, 2, 5, 7, 19 -> [1, 2, 5, 7, 19]
+6, 1, 33 -> [6, 1, 33]
+*/
+
+// int[] array = new int[8];
+// Random rand = new Random();
+// for (int i = 0; i < array.Length; i++)
+// {
+//     array[i] = rand.Next(20);                
+// }
+// var str = string.Join(", ", array);
+// System.Console.Write("[" + str + "]");
+
+// ==========================================================================================
+/*
+Задача 29: Напишите программу, которая задаёт массив
+из 8 элементов и выводит их на экран.
+1, 2, 5, 7, 19 -> [1, 2, 5, 7, 19]
+6, 1, 33 -> [6, 1, 33]
+*/
+// System.Console.Write("Write array items: ");
+// int count = int.Parse(Console.ReadLine()!);// int.Parse == Convert.ToInt32.
+// int[] GetArray()
+// {
+//     int[] array = new int[count];
+//     for (int i = 0; i < array.Length; i++)
+//     {
+//         System.Console.Write("Write array: ");
+//         array[i] = int.Parse(Console.ReadLine()!);                
+//     }
+    
+//     return array;
+// }
+// var str = string.Join(", ", GetArray());
+// System.Console.Write("[" + str + "]");
