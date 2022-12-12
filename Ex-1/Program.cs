@@ -558,15 +558,37 @@
 //Задача № 28 
 //На вход число N, на выходе произведение чисел от 1 до N
 
-int multiplierNumber(int N)
-{
-    int multiplier = 1;
-    for (int i = 1; i <= N; i++)
-    {
-        multiplier *= i;
-    }
-    return multiplier;
-}
-System.Console.Write("Write number A: ");
-int N = int.Parse(Console.ReadLine()!);// int.Parse == Convert.ToInt32.
-System.Console.WriteLine(multiplierNumber(N));
+// int multiplierNumber(int N)
+// {
+//     int multiplier = 1;
+//     for (int i = 1; i <= N; i++)
+//     {
+//         multiplier *= i;
+//     }
+//     return multiplier;
+// }
+// System.Console.Write("Write number A: ");
+// int N = int.Parse(Console.ReadLine()!);// int.Parse == Convert.ToInt32.
+// System.Console.WriteLine(multiplierNumber(N));
+// ==========================================================================================
+/*
+Задача 30: Напишите программу, которая
+выводит массив из 8 элементов, заполненный
+нулями и единицами в случайном порядке.
+[1,0,1,1,0,1,0,0]
+*/
+// System.Console.Write("Write count array: ");
+// int count = int.Parse(Console.ReadLine()!);// int.Parse == Convert.ToInt32.
+// int[] GetArray()
+// {
+//     int[] array = new int[count];
+//     for (int i = 0; i < array.Length; i++)
+//     {
+//         array[i] = new Random().Next(0, 2);
+        
+//     }
+//     return array;
+// }
+// var str = string.Join(", ", GetArray());
+// System.Console.WriteLine("[" + str + "]");
+
