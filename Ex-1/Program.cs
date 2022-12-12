@@ -425,27 +425,27 @@
 // else System.Console.WriteLine("Это не пятизанчное число. В текущем числе " + (index + 1) + " знака");
 
 // ==========================================================================================
-// // Ex19 Var.2
+// // // Ex19 Var.2
 
 
-System.Console.WriteLine("введите пятизначное число: ");
-int number = Convert.ToInt32(Console.ReadLine());
-while (number < 10000 || number >= 100000)
-{
-    System.Console.WriteLine("введите пятизначное число: ");
-    number = Convert.ToInt32(Console.ReadLine());
-}
+// System.Console.WriteLine("введите пятизначное число: ");
+// int number = Convert.ToInt32(Console.ReadLine());
+// while (number < 10000 || number >= 100000)
+// {
+//     System.Console.WriteLine("введите пятизначное число: ");
+//     number = Convert.ToInt32(Console.ReadLine());
+// }
 
-int FirstDigit = (number % 10);
-int SecondDigit = ((number / 10)) % 10;
-int FirdDigit = ((number / 100)) % 10;
-int ForthDigit = (number / 1000) % 10; 
-int FifthDigit = (number / 10000) % 10; 
-System.Console.WriteLine(FirstDigit + " " + SecondDigit + " " + FirdDigit + " " + ForthDigit + " " + FifthDigit);
-int NewNumber = FirstDigit * 10000 + SecondDigit * 1000 + FirdDigit * 100 + ForthDigit * 10+ FifthDigit;
-System.Console.WriteLine(NewNumber);
-if(number == NewNumber) System.Console.WriteLine("Число является полиндромом");
-else System.Console.WriteLine("Число НЕ является полиндромом");
+// int FirstDigit = (number % 10);
+// int SecondDigit = ((number / 10)) % 10;
+// int FirdDigit = ((number / 100)) % 10;
+// int ForthDigit = (number / 1000) % 10; 
+// int FifthDigit = (number / 10000) % 10; 
+// System.Console.WriteLine(FirstDigit + " " + SecondDigit + " " + FirdDigit + " " + ForthDigit + " " + FifthDigit);
+// int NewNumber = FirstDigit * 10000 + SecondDigit * 1000 + FirdDigit * 100 + ForthDigit * 10+ FifthDigit;
+// System.Console.WriteLine(NewNumber);
+// if(number == NewNumber) System.Console.WriteLine("Число является полиндромом");
+// else System.Console.WriteLine("Число НЕ является полиндромом");
 
 // ==========================================================================================
 
