@@ -319,6 +319,7 @@
 // else if(x > 0 && y < 0) System.Console.WriteLine("4 четверть");
 // else if(x = 0 && y = 0) System.Console.WriteLine("На пересечении осей X и Y");
 //==========================================================================================
+//==========================================================================================
 //ClassWork
 //
 // // System.Console.WriteLine("Введите координату X1 по оси X:");
@@ -401,6 +402,7 @@
 //     }
 // }
 // ==========================================================================================
+// ==========================================================================================
 //HomeWork
 // // Ex19
 // // int N = new Random().Next(10000, 100000);
@@ -432,7 +434,7 @@
 // int number = Convert.ToInt32(Console.ReadLine());
 // while (number < 10000 || number >= 100000)
 // {
-//     System.Console.WriteLine("введите пятизначное число: ");
+//     System.Console.WriteLine("Это не пятизначное число. Введите пятизначное число: ");
 //     number = Convert.ToInt32(Console.ReadLine());
 // }
 
@@ -442,7 +444,7 @@
 // int ForthDigit = (number / 1000) % 10; 
 // int FifthDigit = (number / 10000) % 10; 
 // System.Console.WriteLine(FirstDigit + " " + SecondDigit + " " + FirdDigit + " " + ForthDigit + " " + FifthDigit);
-// int NewNumber = FirstDigit * 10000 + SecondDigit * 1000 + FirdDigit * 100 + ForthDigit * 10+ FifthDigit;
+// int NewNumber = FirstDigit * 10000 + SecondDigit * 1000 + FirdDigit * 100 + ForthDigit * 10 + FifthDigit;
 // System.Console.WriteLine(NewNumber);
 // if(number == NewNumber) System.Console.WriteLine("Число является полиндромом");
 // else System.Console.WriteLine("Число НЕ является полиндромом");
@@ -507,4 +509,30 @@
 //         System.Console.Write(Math.Pow(i, 3) + " ");
 //     }
 // }
+// ==========================================================================================
+// ==========================================================================================
+//ClassWork
+/*
+Задача 24: Напишите программу, которая
+принимает на вход число (А) и выдаёт сумму чисел
+от 1 до А.
+7 -> 28
+4 -> 10
+8 -> 36
+*/
+int GetSum(int A)
+{
+    int sum = 0;
+    for (int i = 1; i <= A; i++)
+    {
+        sum += i; // sum = sum + i
+    }
+    return sum;
+}
+System.Console.Write("Write number A: ");
+int N = int.Parse(Console.ReadLine()!);// int.Parse == Convert.ToInt32.
+System.Console.WriteLine(GetSum(N));
+// ==========================================================================================
+
+
 // ==========================================================================================
