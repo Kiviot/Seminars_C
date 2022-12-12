@@ -672,3 +672,35 @@
 // }
 // var str = string.Join(", ", GetArray());
 // System.Console.Write("[" + str + "]");
+
+// ==========================================================================================
+
+/*
+Задача 29: Напишите программу, которая задаёт массив
+из 8 элементов и выводит их на экран.
+1, 2, 5, 7, 19 -> [1, 2, 5, 7, 19]
+6, 1, 33 -> [6, 1, 33]
+*/
+int[] GetArray(int length, int start, int fin)
+{
+    
+    int[] array = new int[length]; 
+    for (int i = 0; i < array.Length; i++) 
+    {
+        array[i] = new Random().Next(start, fin+1);
+    }
+    return array;
+}
+Console.WriteLine("Введите длину массива: ");
+int length = int.Parse(Console.ReadLine()!);
+Console.WriteLine("Введите левую границу диапазона: ");
+int start = int.Parse(Console.ReadLine()!);
+Console.WriteLine("Введите правую границу диапазона: ");
+int fin = int.Parse(Console.ReadLine()!);
+
+var str = string.Join(", ", GetArray(length, start, fin));
+System.Console.Write("[" + str + "]");
+
+// ==========================================================================================
+// ==========================================================================================
+//ClassWork
