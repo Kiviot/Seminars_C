@@ -600,17 +600,36 @@
 степень B. Реализовать функцию возведения в степень
 самостоятельно!
 */
- int degreeNumber(int A, int B)
- {
-    int degree = 1;
-    for (int i = 0; i < B; i++)
+//  int degreeNumber(int A, int B)
+//  {
+//     int degree = 1;
+//     for (int i = 0; i < B; i++)
+//     {
+//         degree *= A;
+//     }
+//     return degree;
+//  }
+// System.Console.Write("Write number A: ");
+// int a = int.Parse(Console.ReadLine()!);// int.Parse == Convert.ToInt32.
+// System.Console.Write("Write degree B: ");
+// int b = int.Parse(Console.ReadLine()!);// int.Parse == Convert.ToInt32.
+// System.Console.WriteLine(degreeNumber(a, b));
+// ==========================================================================================
+/*
+Задача 27: Напишите функцию и запустите ее, которая
+принимает на вход число и выдаёт сумму цифр в числе.
+*/
+int sumDigit(int N)
+{
+    int sum = N % 10;
+    int number = N;
+    while (number / 10 != 0)
     {
-        degree *= A;
+        number /= 10;
+        sum += number % 10;
     }
-    return degree;
- }
-System.Console.Write("Write number A: ");
+    return sum;
+}
+System.Console.Write("Write number N: ");
 int a = int.Parse(Console.ReadLine()!);// int.Parse == Convert.ToInt32.
-System.Console.Write("Write degree B: ");
-int b = int.Parse(Console.ReadLine()!);// int.Parse == Convert.ToInt32.
-System.Console.WriteLine(degreeNumber(a, b));
+System.Console.WriteLine(sumDigit(a));
