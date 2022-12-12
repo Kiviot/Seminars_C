@@ -591,4 +591,26 @@
 // }
 // var str = string.Join(", ", GetArray());
 // System.Console.WriteLine("[" + str + "]");
-
+// ==========================================================================================
+// ==========================================================================================
+//HomeWork
+/*
+Задача 25: Напишите цикл, который принимает на вход
+два числа (A и B) и возводит число A в натуральную
+степень B. Реализовать функцию возведения в степень
+самостоятельно!
+*/
+ int degreeNumber(int A, int B)
+ {
+    int degree = 1;
+    for (int i = 0; i < B; i++)
+    {
+        degree *= A;
+    }
+    return degree;
+ }
+System.Console.Write("Write number A: ");
+int a = int.Parse(Console.ReadLine()!);// int.Parse == Convert.ToInt32.
+System.Console.Write("Write degree B: ");
+int b = int.Parse(Console.ReadLine()!);// int.Parse == Convert.ToInt32.
+System.Console.WriteLine(degreeNumber(a, b));
