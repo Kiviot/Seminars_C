@@ -831,7 +831,7 @@
 //     int[] outArray = new int[GetArray.Length];
 //     for (int j = 0; j < GetArray.Length; j++)
 //     {
-//         outArray[j] =GetArray[j] * (-1);
+//         outArray[j] = GetArray[j] * (-1);
 //     }
 //     return outArray;
 // }
@@ -939,3 +939,49 @@
 // else System.Console.WriteLine("False");
 // ==========================================================================================
 /*
+Задача 35: Задайте одномерный массив из 123 случайных чисел. 
+Найдите количество элементов массива, значения которых лежат в отрезке [10,99].
+*/
+
+int[] GetArray(int len, int minValue, int maxValue)
+{
+    int[] array = new int[len];
+    for (int i = 0; i < len; i++)
+    {
+        array[i] = new Random().Next(minValue, maxValue + 1);
+    }
+    return array;
+}
+// int[] GetArray(int len)
+// {
+//     int[] array = new int[len];
+//     int size = array.Length;
+//     for (int i = 0; i < size; i++)
+//     {
+//         array[i] = new Random().Next();
+//     }
+//     return array;
+// }
+int countItems(int[] array)
+{
+    int items = 0;
+    int size = array.Length;
+    for (int j = 0; j < size; j++)
+    {
+        if(array[j] >= 10 && array[j] <= 99) items += 1;
+    }
+    return items;
+}
+
+Console.WriteLine("Введите длину массива: ");
+int len = int.Parse(Console.ReadLine()!);
+Console.WriteLine("Введите нижнюю границу диапазона: ");
+int minValue = int.Parse(Console.ReadLine()!);
+Console.WriteLine("Введите верхнюю границу диапазона: ");
+int maxValue = int.Parse(Console.ReadLine()!);
+
+int[] resultArray = GetArray(len, minValue, maxValue);
+int count = countItems(resultArray);
+System.Console.WriteLine($"[{string.Join(",", resultArray)}]");
+System.Console.WriteLine("Количество элементов в диапазоне от 10 до 99 (вкл.) равно:" + count);
+
