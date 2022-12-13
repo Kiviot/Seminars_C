@@ -1166,6 +1166,48 @@
 [345, 897, 568, 234] -> 2
 
 */
+// int[] GetArray(int len, int minValue, int maxValue)
+// {
+//     int[] array = new int[len];
+//     int size = array.Length;
+//     for (int i = 0; i < size; i++)
+//     {
+//         array[i] = new Random().Next(minValue,maxValue);
+//     }
+//     return array;
+// }
+
+// int EvenNumberCount(int[] array)
+// {
+//     int evenNumber = 0;
+//     int size = array.Length;
+//     foreach (var item in array)
+//     {
+//         if(item%2 == 0) evenNumber++;
+//     }
+//     return evenNumber;
+// }
+
+
+// Console.WriteLine("Введите длину массива: ");
+// int len = int.Parse(Console.ReadLine()!);
+// Console.WriteLine("Введите нижнюю границу диапазона: ");
+// int minValue = int.Parse(Console.ReadLine()!);
+// Console.WriteLine("Введите верхнюю границу диапазона: ");
+// int maxValue = int.Parse(Console.ReadLine()!);
+
+
+// int[] resultArray = GetArray(len, minValue, maxValue);
+// System.Console.WriteLine($"[{string.Join(",", resultArray)}]");
+// System.Console.WriteLine($"Число четных трехзначных чисел в массиве равно: {EvenNumberCount(resultArray)}");
+
+// ==========================================================================================
+/*
+Задача 36: Задайте одномерный массив, заполненный случайными числами. 
+Найдите сумму элементов, стоящих на нечётных позициях.
+[3, 7, 23, 12] -> 19
+[-4, -6, 89, 6] -> 0
+*/
 int[] GetArray(int len, int minValue, int maxValue)
 {
     int[] array = new int[len];
@@ -1176,18 +1218,16 @@ int[] GetArray(int len, int minValue, int maxValue)
     }
     return array;
 }
-
-int EvenNumberCount(int[] array)
+int OddNumberSum (int[] array)
 {
-    int evenNumber = 0;
+    int oddNumber = 0;
     int size = array.Length;
-    foreach (var item in array)
+    for (int i = 1; i < size; i+=2)
     {
-        if(item%2 == 0) evenNumber++;
+        oddNumber += array[i];
     }
-    return evenNumber;
+    return oddNumber;
 }
-
 
 Console.WriteLine("Введите длину массива: ");
 int len = int.Parse(Console.ReadLine()!);
@@ -1199,4 +1239,4 @@ int maxValue = int.Parse(Console.ReadLine()!);
 
 int[] resultArray = GetArray(len, minValue, maxValue);
 System.Console.WriteLine($"[{string.Join(",", resultArray)}]");
-System.Console.WriteLine($"Число четных трехзначных чисел в массиве равно: {EvenNumberCount(resultArray)}");
+System.Console.WriteLine($"Сумма элементов массива на нечетных позициях, равна: {OddNumberSum(resultArray)}");
