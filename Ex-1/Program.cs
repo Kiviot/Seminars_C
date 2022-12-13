@@ -943,6 +943,96 @@
 Найдите количество элементов массива, значения которых лежат в отрезке [10,99].
 */
 
+// int[] GetArray(int len, int minValue, int maxValue)
+// {
+//     int[] array = new int[len];
+//     for (int i = 0; i < len; i++)
+//     {
+//         array[i] = new Random().Next(minValue, maxValue + 1);
+//     }
+//     return array;
+// }
+// // int[] GetArray(int len)
+// // {
+// //     int[] array = new int[len];
+// //     int size = array.Length;
+// //     for (int i = 0; i < size; i++)
+// //     {
+// //         array[i] = new Random().Next();
+// //     }
+// //     return array;
+// // }
+// int CountItems(int[] array)
+// {
+//     int items = 0;
+//     int size = array.Length;
+//     for (int j = 0; j < size; j++)
+//     {
+//         if(array[j] >= 10 && array[j] <= 99) items += 1;
+//     }
+//     return items;
+// }
+
+// Console.WriteLine("Введите длину массива: ");
+// int len = int.Parse(Console.ReadLine()!);
+// Console.WriteLine("Введите нижнюю границу диапазона: ");
+// int minValue = int.Parse(Console.ReadLine()!);
+// Console.WriteLine("Введите верхнюю границу диапазона: ");
+// int maxValue = int.Parse(Console.ReadLine()!);
+
+// int[] resultArray = GetArray(len, minValue, maxValue);
+// int count = CountItems(resultArray);
+// System.Console.WriteLine($"[{string.Join(",", resultArray)}]");
+// System.Console.WriteLine("Количество элементов в диапазоне от 10 до 99 (вкл.) равно:" + count);
+// ==========================================================================================
+/*
+Задача 35: Задайте одномерный массив из 123 случайных чисел. 
+Найдите количество элементов массива, значения которых лежат в отрезке [10,99].
+*/
+
+// int[] GetArray(int len, int minValue, int maxValue)
+// {
+//     int[] array = new int[len];
+//     for (int i = 0; i < len; i++)
+//     {
+//         array[i] = new Random().Next(minValue, maxValue + 1);
+//     }
+//     return array;
+// }
+
+// int GetCountItems(int[] inputArray, int leftRange, int rightRange)
+// {
+//     int items = 0;
+//     int size = inputArray.Length;
+//     for (int j = 0; j < size; j++)
+//     {
+//         if(inputArray[j] >= leftRange && inputArray[j] <= rightRange) items += 1;
+//     }
+//     return items;
+// }
+
+// Console.WriteLine("Введите длину массива: ");
+// int len = int.Parse(Console.ReadLine()!);
+// Console.WriteLine("Введите нижнюю границу диапазона: ");
+// int minValue = int.Parse(Console.ReadLine()!);
+// Console.WriteLine("Введите верхнюю границу диапазона: ");
+// int maxValue = int.Parse(Console.ReadLine()!);
+// Console.WriteLine("Введите левую границу диапазона: ");
+// int leftRange = int.Parse(Console.ReadLine()!);
+// Console.WriteLine("Введите правую границу диапазона: ");
+// int rightRange = int.Parse(Console.ReadLine()!);
+
+// int[] resultArray = GetArray(len, minValue, maxValue);
+// int count = GetCountItems(resultArray, leftRange, rightRange);
+// System.Console.WriteLine($"[{string.Join(",", resultArray)}]");
+// System.Console.WriteLine("Количество элементов в диапазоне от 10 до 99 (вкл.) равно:" + count);
+
+// ==========================================================================================
+/*
+Задача 35: Задайте одномерный массив из 123 случайных чисел. 
+Найдите количество элементов массива, значения которых лежат в отрезке [10,99].
+*/
+
 int[] GetArray(int len, int minValue, int maxValue)
 {
     int[] array = new int[len];
@@ -952,25 +1042,18 @@ int[] GetArray(int len, int minValue, int maxValue)
     }
     return array;
 }
-// int[] GetArray(int len)
-// {
-//     int[] array = new int[len];
-//     int size = array.Length;
-//     for (int i = 0; i < size; i++)
-//     {
-//         array[i] = new Random().Next();
-//     }
-//     return array;
-// }
-int countItems(int[] array)
+
+int GetCountItems(int[] inputArray, int leftRange, int rightRange)
 {
-    int items = 0;
-    int size = array.Length;
-    for (int j = 0; j < size; j++)
+    int count = 0;
+    int size = inputArray.Length;
+    //foreach (тип данных и переменная in массиве)
+    //var - автоматически определяет тип данных
+    foreach (var item in inputArray)
     {
-        if(array[j] >= 10 && array[j] <= 99) items += 1;
+        if(item >= leftRange && item <= rightRange) count += 1;//item == inputArray[i]
     }
-    return items;
+    return count;
 }
 
 Console.WriteLine("Введите длину массива: ");
@@ -980,8 +1063,12 @@ int minValue = int.Parse(Console.ReadLine()!);
 Console.WriteLine("Введите верхнюю границу диапазона: ");
 int maxValue = int.Parse(Console.ReadLine()!);
 
+Console.WriteLine("Введите левую границу диапазона: ");
+int leftRange = int.Parse(Console.ReadLine()!);
+Console.WriteLine("Введите правую границу диапазона: ");
+int rightRange = int.Parse(Console.ReadLine()!);
+
 int[] resultArray = GetArray(len, minValue, maxValue);
-int count = countItems(resultArray);
+int count = GetCountItems(resultArray, leftRange, rightRange);
 System.Console.WriteLine($"[{string.Join(",", resultArray)}]");
 System.Console.WriteLine("Количество элементов в диапазоне от 10 до 99 (вкл.) равно:" + count);
-
