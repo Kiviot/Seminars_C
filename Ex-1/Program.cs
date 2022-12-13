@@ -855,36 +855,87 @@
 [-4, -8, 8, 2] -> [4, 8, -8, -2] 
 */
 
-int[] GetArray(int len, int minValue, int maxValue)
-{
-    int[] array = new int[len];
-    for (int i = 0; i < len; i++)
-    {
-        array[i] = new Random().Next(minValue, maxValue + 1);
-    }
-    return array;
-}
+// int[] GetArray(int len, int minValue, int maxValue)
+// {
+//     int[] array = new int[len];
+//     for (int i = 0; i < len; i++)
+//     {
+//         array[i] = new Random().Next(minValue, maxValue + 1);
+//     }
+//     return array;
+// }
 
 
-Console.WriteLine("Введите длину массива: ");
-int len = int.Parse(Console.ReadLine()!);
-Console.WriteLine("Введите нижнюю границу диапазона: ");
-int minValue = int.Parse(Console.ReadLine()!);
-Console.WriteLine("Введите верхнюю границу диапазона: ");
-int maxValue = int.Parse(Console.ReadLine()!);
+// Console.WriteLine("Введите длину массива: ");
+// int len = int.Parse(Console.ReadLine()!);
+// Console.WriteLine("Введите нижнюю границу диапазона: ");
+// int minValue = int.Parse(Console.ReadLine()!);
+// Console.WriteLine("Введите верхнюю границу диапазона: ");
+// int maxValue = int.Parse(Console.ReadLine()!);
 
-int[] resultArray = GetArray(len, minValue, maxValue);
-System.Console.WriteLine($"Array: [{string.Join(", ", resultArray)}]");
+// int[] resultArray = GetArray(len, minValue, maxValue);
+// System.Console.WriteLine($"Array: [{string.Join(", ", resultArray)}]");
 
-int [] reversArray(int[] array)
-{
-    int size = array.Length;
-    for (int j = 0; j < size; j++)
-    {
-        array[j] *= -1;
-    }
-    return array;
-}
+// int [] reversArray(int[] array)
+// {
+//     int size = array.Length;
+//     for (int j = 0; j < size; j++)
+//     {
+//         array[j] *= -1;
+//     }
+//     return array;
+// }
 
-int[] InversArray = reversArray(resultArray);
-System.Console.WriteLine($"Revers array: [{String.Join(", ", InversArray)}]");
+// int[] InversArray = reversArray(resultArray);
+// System.Console.WriteLine($"Revers array: [{String.Join(", ", InversArray)}]");
+// ==========================================================================================
+/*
+Задача 33: Задайте массив. Напишите программу, которая определяет, 
+присутствует ли заданное число в массиве.
+4; массив [6, 7, 19, 345, 3] -> нет
+-3; массив [6, 7, 19, 345, 3] -> да
+*/
+
+
+// int[] GetArray(int len, int minValue, int maxValue)
+// {
+//     int[] array = new int[len];
+//     for (int i = 0; i < len; i++)
+//     {
+//         array[i] = new Random().Next(minValue, maxValue + 1);
+//     }
+//     return array;
+// }
+
+
+// Console.WriteLine("Введите длину массива: ");
+// int len = int.Parse(Console.ReadLine()!);
+// Console.WriteLine("Введите нижнюю границу диапазона: ");
+// int minValue = int.Parse(Console.ReadLine()!);
+// Console.WriteLine("Введите верхнюю границу диапазона: ");
+// int maxValue = int.Parse(Console.ReadLine()!);
+
+// int[] resultArray = GetArray(len, minValue, maxValue);
+// System.Console.WriteLine($"Array: [{string.Join(", ", resultArray)}]");
+
+// System.Console.Write("Write serch number: ");
+// int serchNumber = int.Parse(Console.ReadLine()!);
+// int size = resultArray.Length;
+// // for (int i = 0; i < size; i++)
+// // {
+// //     if (resultArray[i] == serchNumber) System.Console.WriteLine("TRUE");
+// //     else System.Console.WriteLine("FOLSE");
+// // }
+// bool result = false;
+// for (int j = 0; j < size; j++)
+// {
+//     if (resultArray[j] == serchNumber)
+//     {
+//         result = true;
+//         break;
+//     }
+// }
+// if (result) System.Console.WriteLine("True");//if (result) == if (result == true) автоматическое сравнение с True
+// else System.Console.WriteLine("False");
+// ==========================================================================================
+/*
