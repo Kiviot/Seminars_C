@@ -1111,18 +1111,18 @@
 //     return array;
 // }
 
-// int[] MultipliArray (int[] array)
-// {
-//     int size = array.Length;
-//     int lastItem = size - 1;
-//     int newArrayLength = (array.Length)/2;
-//     for (int i = 0; i < newArrayLength; i++)
-//     {
-//         array[i] *= array[lastItem];
-//         lastItem --;
-//     }
-//     return array;
-// }
+// // int[] MultipliArray (int[] array)
+// // {
+// //     int size = array.Length;
+// //     int lastItem = size - 1;
+    
+// //     for (int i = 0; i < size; i++)
+// //     {
+// //         array[i] *= array[lastItem];
+// //         lastItem --;
+// //     }
+// //     return array;
+// // }
 
 // Console.WriteLine("Введите длину массива: ");
 // int len = int.Parse(Console.ReadLine()!);
@@ -1130,12 +1130,73 @@
 // int minValue = int.Parse(Console.ReadLine()!);
 // Console.WriteLine("Введите верхнюю границу диапазона: ");
 // int maxValue = int.Parse(Console.ReadLine()!);
+// double size = len/2;
 
 
 // int[] resultArray = GetArray(len, minValue, maxValue);
 // System.Console.WriteLine($"[{string.Join(",", resultArray)}]");
-// int[] newArray = MultipliArray(resultArray);
+// // int[] newArray = MultipliArray(resultArray);
+// // System.Console.WriteLine($"[{string.Join(",", newArray)}]");
+
+
+
+// int[] MultipliArray (int[] array, double size)
+// {
+//     int len = array.Length;
+//     int lastItem = len - 1;
+//     size = len/2;
+//     System.Console.WriteLine(size);
+//     for (int i = 0; i < size; i++)
+//     {
+//         array[i] *= array[lastItem];
+//         lastItem --;
+//     }
+//     return array;
+// }
+
+// int[] newArray = MultipliArray(resultArray, size);
 // System.Console.WriteLine($"[{string.Join(",", newArray)}]");
 
 // ==========================================================================================
 
+/*
+Задача 34: Задайте массив заполненный случайными положительными трёхзначными числами. 
+Напишите программу, которая покажет количество чётных чисел в массиве.
+
+[345, 897, 568, 234] -> 2
+
+*/
+int[] GetArray(int len, int minValue, int maxValue)
+{
+    int[] array = new int[len];
+    int size = array.Length;
+    for (int i = 0; i < size; i++)
+    {
+        array[i] = new Random().Next(minValue,maxValue);
+    }
+    return array;
+}
+
+int EvenNumberCount(int[] array)
+{
+    int evenNumber = 0;
+    int size = array.Length;
+    foreach (var item in array)
+    {
+        if(item%2 == 0) evenNumber++;
+    }
+    return evenNumber;
+}
+
+
+Console.WriteLine("Введите длину массива: ");
+int len = int.Parse(Console.ReadLine()!);
+Console.WriteLine("Введите нижнюю границу диапазона: ");
+int minValue = int.Parse(Console.ReadLine()!);
+Console.WriteLine("Введите верхнюю границу диапазона: ");
+int maxValue = int.Parse(Console.ReadLine()!);
+
+
+int[] resultArray = GetArray(len, minValue, maxValue);
+System.Console.WriteLine($"[{string.Join(",", resultArray)}]");
+System.Console.WriteLine($"Число четных трехзначных чисел в массиве равно: {EvenNumberCount(resultArray)}");
