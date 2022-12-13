@@ -1033,42 +1033,109 @@
 Найдите количество элементов массива, значения которых лежат в отрезке [10,99].
 */
 
-int[] GetArray(int len, int minValue, int maxValue)
-{
-    int[] array = new int[len];
-    for (int i = 0; i < len; i++)
-    {
-        array[i] = new Random().Next(minValue, maxValue + 1);
-    }
-    return array;
-}
+// int[] GetArray(int len, int minValue, int maxValue)
+// {
+//     int[] array = new int[len];
+//     for (int i = 0; i < len; i++)
+//     {
+//         array[i] = new Random().Next(minValue, maxValue + 1);
+//     }
+//     return array;
+// }
 
-int GetCountItems(int[] inputArray, int leftRange, int rightRange)
-{
-    int count = 0;
-    int size = inputArray.Length;
-    //foreach (тип данных и переменная in массиве)
-    //var - автоматически определяет тип данных
-    foreach (var item in inputArray)
-    {
-        if(item >= leftRange && item <= rightRange) count += 1;//item == inputArray[i]
-    }
-    return count;
-}
+// int GetCountItems(int[] inputArray, int leftRange, int rightRange)
+// {
+//     int count = 0;
+//     int size = inputArray.Length;
+//     //foreach (тип данных и переменная in массиве)
+//     //var - автоматически определяет тип данных
+//     foreach (var item in inputArray)
+//     {
+//         if(item >= leftRange && item <= rightRange) count += 1;//item == inputArray[i]
+//     }
+//     return count;
+// }
 
-Console.WriteLine("Введите длину массива: ");
-int len = int.Parse(Console.ReadLine()!);
-Console.WriteLine("Введите нижнюю границу диапазона: ");
-int minValue = int.Parse(Console.ReadLine()!);
-Console.WriteLine("Введите верхнюю границу диапазона: ");
-int maxValue = int.Parse(Console.ReadLine()!);
+// Console.WriteLine("Введите длину массива: ");
+// int len = int.Parse(Console.ReadLine()!);
+// Console.WriteLine("Введите нижнюю границу диапазона: ");
+// int minValue = int.Parse(Console.ReadLine()!);
+// Console.WriteLine("Введите верхнюю границу диапазона: ");
+// int maxValue = int.Parse(Console.ReadLine()!);
 
-Console.WriteLine("Введите левую границу диапазона: ");
-int leftRange = int.Parse(Console.ReadLine()!);
-Console.WriteLine("Введите правую границу диапазона: ");
-int rightRange = int.Parse(Console.ReadLine()!);
+// Console.WriteLine("Введите левую границу диапазона: ");
+// int leftRange = int.Parse(Console.ReadLine()!);
+// Console.WriteLine("Введите правую границу диапазона: ");
+// int rightRange = int.Parse(Console.ReadLine()!);
 
-int[] resultArray = GetArray(len, minValue, maxValue);
-int count = GetCountItems(resultArray, leftRange, rightRange);
-System.Console.WriteLine($"[{string.Join(",", resultArray)}]");
-System.Console.WriteLine("Количество элементов в диапазоне от 10 до 99 (вкл.) равно:" + count);
+// int[] resultArray = GetArray(len, minValue, maxValue);
+// int count = GetCountItems(resultArray, leftRange, rightRange);
+// System.Console.WriteLine($"[{string.Join(",", resultArray)}]");
+// System.Console.WriteLine("Количество элементов в диапазоне от 10 до 99 (вкл.) равно:" + count);
+
+// ==========================================================================================
+// int[] GetArray()
+// {
+//     int[] array = new int[8];
+//     foreach (var item in array)
+//     {
+//         item = new Random().Next(0, 2);
+// не лучшее решение использовать foreach для создания массива. 
+// он хорошо работает тогда, когда необходимо перебрать элементы готового массива.
+// для создания массива лучше использовать цикл for.
+//     }
+//     return array;
+// }
+
+// ==========================================================================================
+// ==========================================================================================
+//Home Work
+
+/*
+Задача 37: Найдите произведение пар чисел в одномерном массиве. 
+Парой считаем первый и последний элемент, второй и предпоследний и т.д. 
+Результат запишите в новом массиве.
+
+[1 2 3 4 5] -> 5 8 3
+[6 7 3 6] -> 36 21
+*/
+
+// int[] GetArray(int len, int minValue, int maxValue)
+// {
+//     int[] array = new int[len];
+//     int size = array.Length;
+//     for (int i = 0; i < size; i++)
+//     {
+//         array[i] = new Random().Next(minValue, maxValue);
+//     }
+//     return array;
+// }
+
+// int[] MultipliArray (int[] array)
+// {
+//     int size = array.Length;
+//     int lastItem = size - 1;
+//     int newArrayLength = (array.Length)/2;
+//     for (int i = 0; i < newArrayLength; i++)
+//     {
+//         array[i] *= array[lastItem];
+//         lastItem --;
+//     }
+//     return array;
+// }
+
+// Console.WriteLine("Введите длину массива: ");
+// int len = int.Parse(Console.ReadLine()!);
+// Console.WriteLine("Введите нижнюю границу диапазона: ");
+// int minValue = int.Parse(Console.ReadLine()!);
+// Console.WriteLine("Введите верхнюю границу диапазона: ");
+// int maxValue = int.Parse(Console.ReadLine()!);
+
+
+// int[] resultArray = GetArray(len, minValue, maxValue);
+// System.Console.WriteLine($"[{string.Join(",", resultArray)}]");
+// int[] newArray = MultipliArray(resultArray);
+// System.Console.WriteLine($"[{string.Join(",", newArray)}]");
+
+// ==========================================================================================
+
