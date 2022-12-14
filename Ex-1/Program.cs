@@ -1208,35 +1208,94 @@
 [3, 7, 23, 12] -> 19
 [-4, -6, 89, 6] -> 0
 */
-int[] GetArray(int len, int minValue, int maxValue)
-{
-    int[] array = new int[len];
-    int size = array.Length;
-    for (int i = 0; i < size; i++)
-    {
-        array[i] = new Random().Next(minValue,maxValue);
-    }
-    return array;
-}
-int OddNumberSum (int[] array)
-{
-    int oddNumber = 0;
-    int size = array.Length;
-    for (int i = 1; i < size; i+=2)
-    {
-        oddNumber += array[i];
-    }
-    return oddNumber;
-}
+// int[] GetArray(int len, int minValue, int maxValue)
+// {
+//     int[] array = new int[len];
+//     int size = array.Length;
+//     for (int i = 0; i < size; i++)
+//     {
+//         array[i] = new Random().Next(minValue,maxValue);
+//     }
+//     return array;
+// }
+// int OddNumberSum (int[] array)
+// {
+//     int oddNumber = 0;
+//     int size = array.Length;
+//     for (int i = 1; i < size; i+=2)
+//     {
+//         oddNumber += array[i];
+//     }
+//     return oddNumber;
+// }
 
-Console.WriteLine("Введите длину массива: ");
-int len = int.Parse(Console.ReadLine()!);
-Console.WriteLine("Введите нижнюю границу диапазона: ");
-int minValue = int.Parse(Console.ReadLine()!);
-Console.WriteLine("Введите верхнюю границу диапазона: ");
-int maxValue = int.Parse(Console.ReadLine()!);
+// Console.WriteLine("Введите длину массива: ");
+// int len = int.Parse(Console.ReadLine()!);
+// Console.WriteLine("Введите нижнюю границу диапазона: ");
+// int minValue = int.Parse(Console.ReadLine()!);
+// Console.WriteLine("Введите верхнюю границу диапазона: ");
+// int maxValue = int.Parse(Console.ReadLine()!);
 
 
-int[] resultArray = GetArray(len, minValue, maxValue);
-System.Console.WriteLine($"[{string.Join(",", resultArray)}]");
-System.Console.WriteLine($"Сумма элементов массива на нечетных позициях, равна: {OddNumberSum(resultArray)}");
+// int[] resultArray = GetArray(len, minValue, maxValue);
+// System.Console.WriteLine($"[{string.Join(",", resultArray)}]");
+// System.Console.WriteLine($"Сумма элементов массива на нечетных позициях, равна: {OddNumberSum(resultArray)}");
+
+// ==========================================================================================
+/*
+Задача 38: Задайте массив вещественных чисел. 
+Найдите разницу между максимальным и минимальным элементов массива.
+
+[3 7 22 2 78] -> 76
+*/
+// // float[] GetArray(int len)
+// // {
+// //     float[] array = new float[len];
+// //     int size = array.Length;
+// //     for (int i = 0; i < size; i++)
+// //     {
+// //         array[i] = new Random().Next();
+// //     }
+// //     return array;
+// // }
+
+// float SearchMinNumber(float[] array)
+// {
+//     float minNumber = array[0];
+//     int size = array.Length;
+//     for (int i = 1; i < size; i++)
+//     {
+//         if (array[i] < minNumber)
+//         {
+//             minNumber = array[i];
+//         }
+//     }
+//     return minNumber;
+// }
+
+// float SearchMaxNumber(float[] array)
+// {
+//     float maxNumber = array[0];
+//     int size = array.Length;
+//     for (int i = 1; i < size; i++)
+//     {
+//         if (array[i] > maxNumber)
+//         {
+//             maxNumber = array[i];
+//         }
+//     }
+//     return maxNumber;
+// }
+
+
+// Console.WriteLine("Введите длину массива: ");
+// int len = int.Parse(Console.ReadLine()!);
+
+// //float[] resultArray = GetArray(len);
+// float[] resultArray = {3, 7, 22, 2, 78};
+// System.Console.WriteLine($"[{string.Join(" ; ", resultArray)}]");
+// System.Console.WriteLine($"Минимальный элемент массива: {SearchMinNumber(resultArray)}");
+// System.Console.WriteLine($"Максимальный элемент массива: {SearchMaxNumber(resultArray)}");
+// System.Console.WriteLine($"Разность максимального и минального элементов: {SearchMaxNumber(resultArray) - SearchMinNumber(resultArray)}");
+// ==========================================================================================
+// ==========================================================================================
