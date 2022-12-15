@@ -372,15 +372,22 @@ string[,] table = new string[2, 5];
 
 // ==========================================================================================
 
- double Factorial (int n)
+//  double Factorial (int n)
+//  {
+//     // 1! = 1
+//     // 0! = 1
+//     if( n == 1) return 1;
+//     else return n * Factorial(n-1);
+//  }
+//  for (int i = 1; i < 40; i++)
+//  {
+//     System.Console.WriteLine($"{i}! = {Factorial(i)}");
+//  }
+//  //System.Console.WriteLine(Factorial(5));
+
+ // ==========================================================================================
+
+ double Fibonachi(int n)
  {
-    // 1! = 1
-    // 0! = 1
-    if( n == 1) return 1;
-    else return n * Factorial(n-1);
+    
  }
- for (int i = 1; i < 40; i++)
- {
-    System.Console.WriteLine($"{i}! = {Factorial(i)}");
- }
- //System.Console.WriteLine(Factorial(5));
