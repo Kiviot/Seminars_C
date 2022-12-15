@@ -278,41 +278,96 @@ string[,] table = new string[2, 5];
 
 // ==========================================================================================
 
-void PrintArray(int[,] matr)// Задание массива
+// void PrintArray(int[,] matr)// Задание массива
+// {
+//     int sizeRows = matr.GetLength(0);
+//     int sizeColums = matr.GetLength(1);
+//     for (int i = 0; i < sizeRows; i++)
+//     {
+//         for (int j = 0; j < sizeColums; j++)
+//         {
+//             System.Console.Write($"{matr[i, j]} ");
+//         }
+//         System.Console.WriteLine();
+//     }
+// }
+
+// void FillArray(int[,] matr)// Заполнение массива
+// {
+//     int sizeRows = matr.GetLength(0);
+//     int sizeColums = matr.GetLength(1);
+//     for (int i = 0; i < sizeRows; i++)
+//     {
+//         for (int j = 0; j < sizeColums; j++)
+//         {
+//             matr[i, j] = new Random().Next(1, 10);
+//         }
+//     }
+// }
+
+// int[,] matrix = new int[3, 4];
+
+// PrintArray(matrix);
+// FillArray(matrix);
+// Console.WriteLine();
+// PrintArray(matrix);
+
+// ==========================================================================================
+
+int[,] pic = new int[,]
 {
-    int sizeRows = matr.GetLength(0);
-    int sizeColums = matr.GetLength(1);
+    {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
+    {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
+    {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
+    {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
+    {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
+    {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
+    {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
+    {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
+    {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
+    {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
+    {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
+    {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
+    {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
+    {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
+    {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
+    {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
+    {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
+    {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
+    {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
+    {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
+};
+
+void PrintImage(int[,] image)// Задание массива
+{
+    int sizeRows = image.GetLength(0);
+    int sizeColums = image.GetLength(1);
     for (int i = 0; i < sizeRows; i++)
     {
         for (int j = 0; j < sizeColums; j++)
         {
-            System.Console.Write($"{matr[i, j]} ");
+            if(image[i, j] == 0) System.Console.Write(" ");// чтобы нормально переходило по строчкам - нужно вызывать команду Write!!
+            else System.Console.Write("+");
         }
         System.Console.WriteLine();
     }
 }
 
-void FillArray(int[,] matr)// Заполнение массива
+void FillImage(int row, int col)// Заполнение массива
 {
-    int sizeRows = matr.GetLength(0);
-    int sizeColums = matr.GetLength(1);
-    for (int i = 0; i < sizeRows; i++)
+    if(pic[row, col] == 0)
     {
-        for (int j = 0; j < sizeColums; j++)
-        {
-            matr[i, j] = new Random().Next(1, 10);
-        }
+        pic[row, col] = 1;
+        FillImage(row - 1, col);
+        FillImage(row, col - 1);
+        FillImage(row + 1, col);
+        FillImage(row, col + 1);
     }
 }
 
-// Console.WriteLine("Введите нижнюю границу диапазона: ");
-// int minValue = int.Parse(Console.ReadLine()!);
-// Console.WriteLine("Введите верхнюю границу диапазона: ");
-// int maxValue = int.Parse(Console.ReadLine()!);
 
-int[,] matrix = new int[3, 4];
 
-PrintArray(matrix);
-FillArray(matrix);
-Console.WriteLine();
-PrintArray(matrix);
+PrintImage(pic);
+FillImage(5, 5);
+System.Console.WriteLine();
+PrintImage(pic);
