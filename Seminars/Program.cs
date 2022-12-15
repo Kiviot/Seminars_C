@@ -1248,54 +1248,54 @@
 
 [3 7 22 2 78] -> 76
 */
-double[] GetArray(int len)
-{
-    double[] array = new double[len];
-    int size = array.Length;
-    for (int i = 0; i < size; i++)
-    {
-        array[i] = new Random().Next(0, 100);
-    }
-    return array;
-}
+// double[] GetArray(int len)
+// {
+//     double[] array = new double[len];
+//     int size = array.Length;
+//     for (int i = 0; i < size; i++)
+//     {
+//         array[i] = new Random().Next(0, 100);
+//     }
+//     return array;
+// }
 
-double SearchMinNumber(double[] array)
-{
-    double minNumber = array[0];
-    int size = array.Length;
-    for (int i = 1; i < size; i++)
-    {
-        if (array[i] < minNumber)
-        {
-            minNumber = array[i];
-        }
-    }
-    return minNumber;
-}
+// double SearchMinNumber(double[] array)
+// {
+//     double minNumber = array[0];
+//     int size = array.Length;
+//     for (int i = 1; i < size; i++)
+//     {
+//         if (array[i] < minNumber)
+//         {
+//             minNumber = array[i];
+//         }
+//     }
+//     return minNumber;
+// }
 
-double SearchMaxNumber(double[] array)
-{
-    double maxNumber = array[0];
-    int size = array.Length;
-    for (int i = 1; i < size; i++)
-    {
-        if (array[i] > maxNumber)
-        {
-            maxNumber = array[i];
-        }
-    }
-    return maxNumber;
-}
+// double SearchMaxNumber(double[] array)
+// {
+//     double maxNumber = array[0];
+//     int size = array.Length;
+//     for (int i = 1; i < size; i++)
+//     {
+//         if (array[i] > maxNumber)
+//         {
+//             maxNumber = array[i];
+//         }
+//     }
+//     return maxNumber;
+// }
 
 
-Console.WriteLine("Введите длину массива: ");
-int len = int.Parse(Console.ReadLine()!);
+// Console.WriteLine("Введите длину массива: ");
+// int len = int.Parse(Console.ReadLine()!);
 
-double[] resultArray = GetArray(len);
-// float[] resultArray = {3, 7, 22, 2, 78};
-System.Console.WriteLine($"[{string.Join(" ; ", resultArray)}]");
-System.Console.WriteLine($"Минимальный элемент массива: {SearchMinNumber(resultArray)}");
-System.Console.WriteLine($"Максимальный элемент массива: {SearchMaxNumber(resultArray)}");
-System.Console.WriteLine($"Разность максимального и минального элементов: {SearchMaxNumber(resultArray) - SearchMinNumber(resultArray)}");
+// double[] resultArray = GetArray(len);
+// // double[] resultArray = {3, 7, 22, 2, 78};
+// System.Console.WriteLine($"[{string.Join(" ; ", resultArray)}]");
+// System.Console.WriteLine($"Минимальный элемент массива: {SearchMinNumber(resultArray)}");
+// System.Console.WriteLine($"Максимальный элемент массива: {SearchMaxNumber(resultArray)}");
+// System.Console.WriteLine($"Разность максимального и минального элементов: {SearchMaxNumber(resultArray) - SearchMinNumber(resultArray)}");
 // ==========================================================================================
 // ==========================================================================================
