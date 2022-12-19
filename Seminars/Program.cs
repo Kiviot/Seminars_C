@@ -1397,6 +1397,48 @@
 
 
 // ==========================================================================================
+/*
+Задача 37: Найдите произведение пар чисел в одномерном массиве. 
+Парой считаем первый и последний элемент, второй и предпоследний и т.д. 
+Результат запишите в новом массиве.
+
+[1 2 3 4 5] -> 5 8 3
+[6 7 3 6] -> 36 21
+*/
+
+// void PrintArray(int[] array)// Задание массива
+// {
+//     int size = array.Length;
+//     for (int i = 0; i < size; i++)
+//     {
+//         System.Console.Write($"{array[i]} ");
+//     }
+// }
+
+
+// int[] MultipliArray(int[] array)// Заполнение массива
+// {
+//     int size = array.Length;
+//     int lastItem = size - 1;
+//     int len = size/2 + size % 2;
+//     int[] resultArray = new int[len];
+//     for (int i = 0; i < len; i++)
+//     {
+//         if(i != lastItem) resultArray[i] = array[i] * array[lastItem];
+//         else resultArray[i] = array[i];
+//         lastItem --;
+//     }
+//     return resultArray;
+// }
+
+// int[] array = {1, 2, 3, 4, 5};
+
+// PrintArray(array);
+// Console.WriteLine();
+// int[] newArray = MultipliArray(array);
+// PrintArray(newArray);
+
+
 // ==========================================================================================
 //ClassWork
 /*
@@ -1494,37 +1536,83 @@
 {1 2 3 4 5} - {5 4 3 2 1}
 */
 
-int[] GetArray(int len, int minValue, int maxValue)
-{
-    int[] array = new int[len];
-    int size = array.Length;
-    for (int i = 0; i < size; i++)
-    {
-        array[i] = new Random().Next(minValue, maxValue);
-    }
-    return array;
-}
+// int[] GetArray(int len, int minValue, int maxValue)
+// {
+//     int[] array = new int[len];
+//     int size = array.Length;
+//     for (int i = 0; i < size; i++)
+//     {
+//         array[i] = new Random().Next(minValue, maxValue);
+//     }
+//     return array;
+// }
 
-int[] ReversArray(int[] array)
-{
-    int size = array.Length;
-    int[] result = new int[size];
-    int lastItem = size - 1;
-    for (int i = 0; i < size; i++)
-    {
-        result[i] = array[lastItem - i];
-    }
-    return result;
-}
+// int[] ReversArray(int[] array)
+// {
+//     int size = array.Length;
+//     int[] result = new int[size];
+//     int lastItem = size - 1;
+//     for (int i = 0; i < size; i++)
+//     {
+//         result[i] = array[lastItem - i];
+//     }
+//     return result;
+// }
 
-Console.WriteLine("Введите длину массива: ");
-int len = int.Parse(Console.ReadLine()!);
-Console.WriteLine("Введите нижнюю границу диапазона: ");
-int minValue = int.Parse(Console.ReadLine()!);
-Console.WriteLine("Введите верхнюю границу диапазона: ");
-int maxValue = int.Parse(Console.ReadLine()!);
+// Console.WriteLine("Введите длину массива: ");
+// int len = int.Parse(Console.ReadLine()!);
+// Console.WriteLine("Введите нижнюю границу диапазона: ");
+// int minValue = int.Parse(Console.ReadLine()!);
+// Console.WriteLine("Введите верхнюю границу диапазона: ");
+// int maxValue = int.Parse(Console.ReadLine()!);
 
-int[] array = GetArray(len, minValue, maxValue);
-System.Console.WriteLine($"[{string.Join(",", array)}]");
-int[] resultArray = ReversArray(array);
-System.Console.WriteLine($"[{string.Join(",", resultArray)}]");
+// int[] array = GetArray(len, minValue, maxValue);
+// System.Console.WriteLine($"[{string.Join(",", array)}]");
+// int[] resultArray = ReversArray(array);
+// System.Console.WriteLine($"[{string.Join(",", resultArray)}]");
+
+// ==========================================================================================
+/*
+Задача 39 V.4 (random) метод пузырька
+Написать программу, которая будет разворачивать массив
+{1 2 3 4 5} - {5 4 3 2 1}
+*/
+// void PrintArray(int[] array)// Задание массива
+// {
+//     int size = array.Length;
+//     for (int i = 0; i < size; i++)
+//     {
+//         System.Console.Write($"{array[i]} ");
+//     }
+// }
+
+// void BubbleSort(int[] array)
+// {
+//     int size = array.Length;
+//     int lastItem = size - 1;
+//     int len = array.Length / 2;
+//     for (int i = 0; i < len; i++)
+//     {
+//         int temp = array[i];
+//         array[i] = array[lastItem - i];
+//         array[lastItem - i] = temp;
+//     }
+// }
+
+// int[] GetArray(int len, int minValue, int maxValue)
+// {
+//     int[] array = new int[len];
+//     int size = array.Length;
+//     for (int i = 0; i < size; i++)
+//     {
+//         array[i] = new Random().Next(minValue, maxValue);
+//     }
+//     return array;
+// }
+
+// int[] array = GetArray(10, 0, 10);
+// PrintArray(array);
+// Console.WriteLine();
+// BubbleSort(array);
+// PrintArray(array);
+// ==========================================================================================
