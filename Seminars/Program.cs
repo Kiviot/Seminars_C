@@ -1447,6 +1447,53 @@
 {1 2 3 4 5} - {5 4 3 2 1}
 */
 
+// int[] GetArray(int len, int minValue, int maxValue)
+// {
+//     int[] array = new int[len];
+//     int size = array.Length;
+//     for (int i = 0; i < size; i++)
+//     {
+//         array[i] = new Random().Next(minValue, maxValue);
+//     }
+//     return array;
+// }
+
+// int[] ReversArray(int[] array)
+// {
+//     int size = array.Length;
+//     int lastItem = size - 1;
+//     int len = array.Length / 2;
+//     int currentItem =0;
+//     for (int i = 0; i < len; i++)
+//     {
+//         currentItem = array[i];
+//         array[i] = array[lastItem];
+//         array[lastItem] = currentItem;
+//         lastItem --;
+//     }
+//     return array;
+// }
+
+// Console.WriteLine("Введите длину массива: ");
+// int len = int.Parse(Console.ReadLine()!);
+// Console.WriteLine("Введите нижнюю границу диапазона: ");
+// int minValue = int.Parse(Console.ReadLine()!);
+// Console.WriteLine("Введите верхнюю границу диапазона: ");
+// int maxValue = int.Parse(Console.ReadLine()!);
+
+// int[] array = GetArray(len, minValue, maxValue);
+// System.Console.WriteLine($"[{string.Join(",", array)}]");
+// int[] resultArray = ReversArray(array);
+// System.Console.WriteLine($"[{string.Join(",", resultArray)}]");
+
+// ==========================================================================================
+
+/*
+Задача 39 V.3 (random)
+Написать программу, которая будет разворачивать массив
+{1 2 3 4 5} - {5 4 3 2 1}
+*/
+
 int[] GetArray(int len, int minValue, int maxValue)
 {
     int[] array = new int[len];
@@ -1461,17 +1508,13 @@ int[] GetArray(int len, int minValue, int maxValue)
 int[] ReversArray(int[] array)
 {
     int size = array.Length;
+    int[] result = new int[size];
     int lastItem = size - 1;
-    int len = array.Length / 2;
-    int currentItem =0;
-    for (int i = 0; i < len; i++)
+    for (int i = 0; i < size; i++)
     {
-        currentItem = array[i];
-        array[i] = array[lastItem];
-        array[lastItem] = currentItem;
-        lastItem --;
+        result[i] = array[lastItem - i];
     }
-    return array;
+    return result;
 }
 
 Console.WriteLine("Введите длину массива: ");
@@ -1485,4 +1528,3 @@ int[] array = GetArray(len, minValue, maxValue);
 System.Console.WriteLine($"[{string.Join(",", array)}]");
 int[] resultArray = ReversArray(array);
 System.Console.WriteLine($"[{string.Join(",", resultArray)}]");
-
