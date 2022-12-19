@@ -1627,9 +1627,42 @@
 каждая сторона треугольника меньше суммы двух других сторон
 */
 
-bool IsTriangle (int a, int b, int c)
+// bool IsTriangle (int a, int b, int c)
+// {
+//     return (((a + b) > c) && ((a + c) > b) && ((c + b) > a));
+// }
+
+// System.Console.WriteLine(IsTriangle(2, 3, 4));
+
+// ==========================================================================================
+
+/*
+Не используя рекурсию, выведите первые N чисел Фибоначчи. 
+Первые два числа Фибоначчи: 0 и 1.
+
+Если N = 5 -> 0 1 1 2 3
+Если N = 3 -> 0 1 1
+Если N = 7 -> 0 1 1 2 3 5 8
+*/
+
+void PrintArray(int[] array)// Задание массива
 {
-    return (((a + b) > c) && ((a + c) > b) && ((c + b) > a));
+    int size = array.Length;
+    for (int i = 0; i < size; i++)
+    {
+        System.Console.Write($"{array[i]} ");
+    }
 }
 
-System.Console.WriteLine(IsTriangle(2, 3, 4));
+
+int Fibonacci(int len)// Заполнение массива
+{
+    if(len == 0) return 0;
+    else if(len == 1) return 1;
+    else Fibonacci = Fibonacci[len-2] + Fibonacci[len-1];
+}        
+
+for (int i = 0; i < 5; i++)
+    {
+        System.Console.WriteLine($"f{i} = {Fibonacci(i)}, ");
+    }
