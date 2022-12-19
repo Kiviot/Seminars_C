@@ -1645,24 +1645,40 @@
 Если N = 7 -> 0 1 1 2 3 5 8
 */
 
-void PrintArray(int[] array)// Задание массива
-{
-    int size = array.Length;
-    for (int i = 0; i < size; i++)
-    {
-        System.Console.Write($"{array[i]} ");
-    }
-}
+// void PrintArray(int[] array)// Задание массива
+// {
+//     int size = array.Length;
+//     for (int i = 0; i < size; i++)
+//     {
+//         System.Console.Write($"{array[i]} ");
+//     }
+// }
 
+//var. 1 (recursia)
+// int Fibonacci(int len)// Заполнение массива
+// {
+//     if(len == 0) return 0;
+//     else if(len == 1) return 1;
+//     else return Fibonacci(len-2) + Fibonacci(len-1);
+// }        
 
-int Fibonacci(int len)// Заполнение массива
-{
-    if(len == 0) return 0;
-    else if(len == 1) return 1;
-    else Fibonacci = Fibonacci[len-2] + Fibonacci[len-1];
-}        
+// for (int i = 0; i < 5; i++)
+//     {
+//         System.Console.WriteLine($"f{i} = {Fibonacci(i)}, ");
+//     }
 
-for (int i = 0; i < 5; i++)
-    {
-        System.Console.WriteLine($"f{i} = {Fibonacci(i)}, ");
-    }
+//var.2 
+
+int firstElement = 0;
+int secondElement = 1;
+int n = 7;
+Console.WriteLine($"1. = {firstElement}, ");
+Console.WriteLine($"2. = {secondElement}, ");
+
+// for (int i = 3; i <= n; i++)// в данном случае i - это не индекс, а порядковый номер.
+// {
+//     int nextElement = firstElement + secondElement;
+//     Console.WriteLine($"{i}. = {nextElement}, ");
+//     firstElement = secondElement;
+//     secondElement = nextElement;
+// }
