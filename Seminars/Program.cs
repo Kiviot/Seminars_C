@@ -1340,11 +1340,18 @@
 //     }
 //     return array;
 // }
-
-
 // void PrintArray(int[] array)// Задание массива
 // {
 //     int size = array.Length;
+//     for (int i = 0; i < size; i++)
+//     {
+//         System.Console.Write($"{array[i]} ");
+//     }
+// }
+
+// void PrintArrayNew(int[] array)// Задание 1/2 массива
+// {
+//     int size = array.Length / 2 + array.Length % 2;
 //     for (int i = 0; i < size; i++)
 //     {
 //         System.Console.Write($"{array[i]} ");
@@ -1355,9 +1362,9 @@
 // {
 //     int size = array.Length;
 //     int lastItem = size - 1;
-//     for (int i = 0; i < size/2; i++)
+//     for (int i = 0; i < size; i++)
 //     {
-//         if(i <= lastItem) 
+//         if(i != lastItem) 
 //         array[i] *= array[lastItem];
 //         lastItem --;
 //     }
@@ -1368,24 +1375,8 @@
 // PrintArray(array);
 // FillArray(array);
 // Console.WriteLine();
-// PrintArray(array);
-
-
-
-// int MultipliArrayItems (int[] array)
-// {
-//     int size = array.Length;
-//     int lastItem = size - 1;
-//     int i = 0;
-//     for (int i = 0; i < size/2; i++)
-//     {
-//         array[i] *= array[lastItem];
-//         lastItem --;
-//     }
-//     return array;
-// }
-
-
+// PrintArrayNew(array);
+// Console.WriteLine();
 
 // Console.WriteLine("Введите длину массива: ");
 // int len = int.Parse(Console.ReadLine()!);
@@ -1393,18 +1384,58 @@
 // int minValue = int.Parse(Console.ReadLine()!);
 // Console.WriteLine("Введите верхнюю границу диапазона: ");
 // int maxValue = int.Parse(Console.ReadLine()!);
-// double size = len/2;
+
 
 
 
 // int[] resultArray = GetArray(len, minValue, maxValue);
-// int[] resultArray = {1, 2, 3, 4 , 5, 6};
+// // int[] resultArray = {1, 2, 3, 4 , 5, 6};
 // System.Console.WriteLine($"[{string.Join(",", resultArray)}]");
-// int[] newArray = MultipliArray(resultArray);
-// System.Console.WriteLine($"[{string.Join(",", newArray)}]");
+// FillArray(resultArray);
+// Console.WriteLine();
+// PrintArrayNew(resultArray);
 
 
 // ==========================================================================================
 // ==========================================================================================
 //ClassWork
+/*
+Задача 39
+Написать программу, которая будет разворачивать массив
+{1 2 3 4 5} - {5 4 3 2 1}
+*/
+
+// void PrintArray(int[] array)// Задание массива
+// {
+//     int size = array.Length;
+//     for (int i = 0; i < size; i++)
+//     {
+//         System.Console.Write($"{array[i]} ");
+//     }
+// }
+
+
+// void ReversArray(int[] array)// Заполнение массива
+// {
+//     int size = array.Length;
+//     int lastItem = size - 1;
+//     int currentItem =0;
+//     for (int i = 0; i < size/2; i++)
+//     {
+//         currentItem = array[i];
+//         array[i] = array[lastItem];
+//         array[lastItem] = currentItem;
+//         lastItem --;
+//     }
+// }
+
+// int[] array = {1, 2, 3, 4, 5};
+
+// PrintArray(array);
+// ReversArray(array);
+// Console.WriteLine();
+// PrintArray(array);
+
+// ==========================================================================================
+
 
