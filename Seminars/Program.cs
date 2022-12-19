@@ -1113,9 +1113,62 @@
 
 // // int[] MultipliArray (int[] array)
 // // {
+// //     int newSize = array.Length / 2 + array.Length % 2;
 // //     int size = array.Length;
 // //     int lastItem = size - 1;
+// //     int i = 0;
+// //     while(i < 3)
+// //     {
+// //         array[i] *= array[lastItem];
+// //         lastItem --;
+// //         i++;
+  
+// //     }
+// //     return array;
+// // }
+
+
+
+// int[] MultipliArray (int[] arr)
+// {
+//     int newSize = arr.Length / 2 + arr.Length % 2;
+//     int[] newArray = new int[newSize];
+//     int size = arr.Length;
+//     int lastItem = size - 1;
     
+//     for (int i = 0; i < newSize; i++)
+//     {
+//         arr[i] *= arr[lastItem];
+//         if(arr[i] != arr[lastItem])   arr[i] = newArray[i];
+//         lastItem --;
+          
+//     }
+//     return newArray;
+// }
+
+// Console.WriteLine("Введите длину массива: ");
+// int len = int.Parse(Console.ReadLine()!);
+// Console.WriteLine("Введите нижнюю границу диапазона: ");
+// int minValue = int.Parse(Console.ReadLine()!);
+// Console.WriteLine("Введите верхнюю границу диапазона: ");
+// int maxValue = int.Parse(Console.ReadLine()!);
+// // double size = len/2;
+
+
+// int[] resultArray = GetArray(len, minValue, maxValue);
+// // int[] resultArray = {1, 2, 3, 4 , 5, 6};
+// System.Console.WriteLine($"[{string.Join(",", resultArray)}]");
+// int[] newArray = MultipliArray(resultArray);
+// System.Console.WriteLine($"[{string.Join(",", newArray)}]");
+
+
+
+// // int[] MultipliArray (int[] array, double size)
+// // {
+// //     int len = array.Length;
+// //     int lastItem = len - 1;
+// //     size = len/2;
+// //     System.Console.WriteLine(size);
 // //     for (int i = 0; i < size; i++)
 // //     {
 // //         array[i] *= array[lastItem];
@@ -1124,38 +1177,8 @@
 // //     return array;
 // // }
 
-// Console.WriteLine("Введите длину массива: ");
-// int len = int.Parse(Console.ReadLine()!);
-// Console.WriteLine("Введите нижнюю границу диапазона: ");
-// int minValue = int.Parse(Console.ReadLine()!);
-// Console.WriteLine("Введите верхнюю границу диапазона: ");
-// int maxValue = int.Parse(Console.ReadLine()!);
-// double size = len/2;
-
-
-// int[] resultArray = GetArray(len, minValue, maxValue);
-// System.Console.WriteLine($"[{string.Join(",", resultArray)}]");
-// // int[] newArray = MultipliArray(resultArray);
+// // int[] newArray = MultipliArray(resultArray, size);
 // // System.Console.WriteLine($"[{string.Join(",", newArray)}]");
-
-
-
-// int[] MultipliArray (int[] array, double size)
-// {
-//     int len = array.Length;
-//     int lastItem = len - 1;
-//     size = len/2;
-//     System.Console.WriteLine(size);
-//     for (int i = 0; i < size; i++)
-//     {
-//         array[i] *= array[lastItem];
-//         lastItem --;
-//     }
-//     return array;
-// }
-
-// int[] newArray = MultipliArray(resultArray, size);
-// System.Console.WriteLine($"[{string.Join(",", newArray)}]");
 
 // ==========================================================================================
 
@@ -1298,4 +1321,90 @@
 // System.Console.WriteLine($"Максимальный элемент массива: {SearchMaxNumber(resultArray)}");
 // System.Console.WriteLine($"Разность максимального и минального элементов: {SearchMaxNumber(resultArray) - SearchMinNumber(resultArray)}");
 // ==========================================================================================
+/*
+Задача 37: Найдите произведение пар чисел в одномерном массиве. 
+Парой считаем первый и последний элемент, второй и предпоследний и т.д. 
+Результат запишите в новом массиве.
+
+[1 2 3 4 5] -> 5 8 3
+[6 7 3 6] -> 36 21
+*/
+
+// int[] GetArray(int len, int minValue, int maxValue)
+// {
+//     int[] array = new int[len];
+//     int size = array.Length;
+//     for (int i = 0; i < size; i++)
+//     {
+//         array[i] = new Random().Next(minValue, maxValue);
+//     }
+//     return array;
+// }
+
+
+// void PrintArray(int[] array)// Задание массива
+// {
+//     int size = array.Length;
+//     for (int i = 0; i < size; i++)
+//     {
+//         System.Console.Write($"{array[i]} ");
+//     }
+// }
+
+// void FillArray(int[] array)// Заполнение массива
+// {
+//     int size = array.Length;
+//     int lastItem = size - 1;
+//     for (int i = 0; i < size/2; i++)
+//     {
+//         if(i <= lastItem) 
+//         array[i] *= array[lastItem];
+//         lastItem --;
+//     }
+// }
+
+// int[] array = {1, 2, 3, 4, 5};
+
+// PrintArray(array);
+// FillArray(array);
+// Console.WriteLine();
+// PrintArray(array);
+
+
+
+// int MultipliArrayItems (int[] array)
+// {
+//     int size = array.Length;
+//     int lastItem = size - 1;
+//     int i = 0;
+//     for (int i = 0; i < size/2; i++)
+//     {
+//         array[i] *= array[lastItem];
+//         lastItem --;
+//     }
+//     return array;
+// }
+
+
+
+// Console.WriteLine("Введите длину массива: ");
+// int len = int.Parse(Console.ReadLine()!);
+// Console.WriteLine("Введите нижнюю границу диапазона: ");
+// int minValue = int.Parse(Console.ReadLine()!);
+// Console.WriteLine("Введите верхнюю границу диапазона: ");
+// int maxValue = int.Parse(Console.ReadLine()!);
+// double size = len/2;
+
+
+
+// int[] resultArray = GetArray(len, minValue, maxValue);
+// int[] resultArray = {1, 2, 3, 4 , 5, 6};
+// System.Console.WriteLine($"[{string.Join(",", resultArray)}]");
+// int[] newArray = MultipliArray(resultArray);
+// System.Console.WriteLine($"[{string.Join(",", newArray)}]");
+
+
 // ==========================================================================================
+// ==========================================================================================
+//ClassWork
+
