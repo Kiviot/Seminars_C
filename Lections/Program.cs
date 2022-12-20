@@ -412,10 +412,12 @@ string[,] table = new string[2, 5];
 //  }
 // ==========================================================================================
 // ==========================================================================================
-int a = 12;
-System.Console.WriteLine(a.GetType().Name);
+// int a = 12;
+// System.Console.WriteLine(a.GetType().Name);
 
-var b = 12;
-System.Console.WriteLine(b.GetType().Name);
+// var b = 12;
+// System.Console.WriteLine(b.GetType().Name);
 
-var data = new int[] {1, 2, 3, 4};
+// var data = new int[] {1, 2, 3, 4};
+
+// ==========================================================================================

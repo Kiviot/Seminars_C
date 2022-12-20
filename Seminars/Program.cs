@@ -1751,3 +1751,310 @@ b1 = 2, k1 = 5, b2 = 4, k2 = 9 -> (-0,5; -0,5)
 // System.Console.WriteLine($"точка пересечений двух прямых равна ({x}, {y1})");
 
 // ==========================================================================================
+// ClassWork (7)
+/*
+Задача 46: Задайте двумерный массив размером m×n, 
+заполненный случайными целыми числами.
+m = 3, n = 4.
+1 4 8 19
+5 -2 33 -2
+77 3 8 1
+*/
+
+// int[,] GetMatrix (int rows, int colums, int minValue, int maxValue)
+// {
+//     int[,] matrix = new int[rows, colums];
+//     int sizeRows = matrix.GetLength(0);
+//     int sizeColums = matrix.GetLength(1);
+//         for (int i = 0; i < sizeRows; i++)
+//     {
+//         for (int j = 0; j < sizeColums; j++)
+//         {
+//             matrix[i, j] = new Random().Next(minValue, maxValue +1);
+//         }
+//     }
+//     return matrix;
+// }
+
+// void PrintMatrix(int[,] inputMatrix)
+// {
+//     int sizeRows = inputMatrix.GetLength(0);
+//     int sizeColums = inputMatrix.GetLength(1);
+//     for (int i = 0; i < sizeRows; i++)
+//     {
+//         for (int j = 0; j < sizeColums; j++)
+//         {
+//             System.Console.Write($"{inputMatrix[i, j]}\t");
+//         }
+//         System.Console.WriteLine();
+//     }
+// }
+
+// System.Console.WriteLine("write count rows: ");
+// int rows = int.Parse(Console.ReadLine()!);
+
+// System.Console.WriteLine("write count colums: ");
+// int colums = int.Parse(Console.ReadLine()!);
+
+// int[,] result = GetMatrix (rows, colums, 0, 10);
+// PrintMatrix(result);
+
+
+// ==========================================================================================
+/*
+Задача 48: Задайте двумерный массив размера m на n, каждый элемент в массиве находится по формуле: 
+Aₘₙ = m+n. Выведите полученный массив на экран.
+m = 3, n = 4.
+0 1 2 3
+1 2 3 4
+2 3 4 5
+*/
+// int[,] GetMatrix (int rows, int colums, int minValue, int maxValue)
+// {
+//     int[,] matrix = new int[rows, colums];
+//     int sizeRows = matrix.GetLength(0);
+//     int sizeColums = matrix.GetLength(1);
+//         for (int i = 0; i < sizeRows; i++)
+//     {
+//         for (int j = 0; j < sizeColums; j++)
+//         {
+//             matrix[i, j] = i + j;
+//         }
+//     }
+//     return matrix;
+// }
+
+// void PrintMatrix(int[,] inputMatrix)
+// {
+//     int sizeRows = inputMatrix.GetLength(0);
+//     int sizeColums = inputMatrix.GetLength(1);
+//     for (int i = 0; i < sizeRows; i++)
+//     {
+//         for (int j = 0; j < sizeColums; j++)
+//         {
+//             System.Console.Write($"{inputMatrix[i, j]}\t");
+//         }
+//         System.Console.WriteLine();
+//     }
+// }
+
+// System.Console.WriteLine("write count rows: ");
+// int rows = int.Parse(Console.ReadLine()!);
+
+// System.Console.WriteLine("write count colums: ");
+// int colums = int.Parse(Console.ReadLine()!);
+
+// int[,] result = GetMatrix (rows, colums, 0, 10);
+// PrintMatrix(result);
+
+// ==========================================================================================
+
+/*
+Задача 49: Задайте двумерный массив. Найдите элементы, у которых оба индекса чётные, 
+и замените эти элементы на их квадраты.
+Задача 51. найти сумму элементов главной диагонали
+
+*/
+// int[,] GetMatrix (int rows, int colums, int minValue, int maxValue)
+// {
+//     int[,] matrix = new int[rows, colums];
+//     int sizeRows = matrix.GetLength(0);
+//     int sizeColums = matrix.GetLength(1);
+//         for (int i = 0; i < sizeRows; i++)
+//     {
+//         for (int j = 0; j < sizeColums; j++)
+//         {
+//             if(i % 2 == 0 && j % 2 == 0) matrix[i, j] = Convert.ToInt32(Math.Pow((i + j), 2));
+//             else matrix[i, j] = i + j;
+//         }
+//     }
+//     return matrix;
+// }
+
+// void PrintMatrix(int[,] inputMatrix)
+// {
+//     int sizeRows = inputMatrix.GetLength(0);
+//     int sizeColums = inputMatrix.GetLength(1);
+//     for (int i = 0; i < sizeRows; i++)
+//     {
+//         for (int j = 0; j < sizeColums; j++)
+//         {
+//             System.Console.Write($"{inputMatrix[i, j]}\t");
+//         }
+//         System.Console.WriteLine();
+//     }
+// }
+
+// int SumItemGeneralDiagonal(int[,] inputMatrix)
+// {
+//     int sumItem = 0;
+//     int sizeRows = inputMatrix.GetLength(0);
+//     int sizeColums = inputMatrix.GetLength(1);
+//     for (int i = 0; i < sizeRows; i++)
+//     {
+//         for (int j = 0; j < sizeColums; j++)
+//         {
+//             if(i == j) sumItem += inputMatrix[i, j];
+//             else sumItem += 0;
+//         }
+//     }
+//     return sumItem;
+// }
+
+
+// System.Console.WriteLine("write count rows: ");
+// int rows = int.Parse(Console.ReadLine()!);
+
+// System.Console.WriteLine("write count colums: ");
+// int colums = int.Parse(Console.ReadLine()!);
+
+// int[,] result = GetMatrix (rows, colums, 0, 10);
+// PrintMatrix(result);
+
+// System.Console.WriteLine($"Сумма элементов главной диагонали: {SumItemGeneralDiagonal(result)}");
+
+// ==========================================================================================
+
+/*
+
+Var.2
+Задача 49: Задайте двумерный массив. Найдите элементы, у которых оба индекса чётные, 
+и замените эти элементы на их квадраты.
+Задача 51. найти сумму элементов главной диагонали
+
+*/
+// int[,] GetMatrix (int rows, int colums, int minValue, int maxValue)
+// {
+//     int[,] matrix = new int[rows, colums];
+//     int sizeRows = matrix.GetLength(0);
+//     int sizeColums = matrix.GetLength(1);
+//         for (int i = 0; i < sizeRows; i++)
+//     {
+//         for (int j = 0; j < sizeColums; j++)
+//         {
+//             matrix[i, j] = new Random().Next(minValue, maxValue +1);
+//         }
+//     }
+//     return matrix;
+// }
+
+// // int[,] GetNewMatrix (int[,] matrix)
+// // {
+// //     int sizeRows = matrix.GetLength(0);
+// //     int sizeColums = matrix.GetLength(1);
+// //         for (int i = 0; i < sizeRows; i++)
+// //     {
+// //         for (int j = 0; j < sizeColums; j++)
+// //         {
+// //             if(i % 2 == 0 && j % 2 == 0) matrix[i, j] = Convert.ToInt32(Math.Pow(matrix[i, j], 2));
+// //         }
+// //     }
+// //     return matrix;
+// // }
+// int[,] GetNewMatrix (int[,] matrix)
+// {
+//     int sizeRows = matrix.GetLength(0);
+//     int sizeColums = matrix.GetLength(1);
+//         for (int i = 0; i < sizeRows; i+=2)
+//     {
+//         for (int j = 0; j < sizeColums; j+=2)
+//         {
+//             matrix[i, j] = Convert.ToInt32(Math.Pow(matrix[i, j], 2)); //matrix[i, j] *= matrix[i, j]
+//         }
+//     }
+//     return matrix;
+// }
+
+// void PrintMatrix(int[,] inputMatrix)
+// {
+//     int sizeRows = inputMatrix.GetLength(0);
+//     int sizeColums = inputMatrix.GetLength(1);
+//     for (int i = 0; i < sizeRows; i++)
+//     {
+//         for (int j = 0; j < sizeColums; j++)
+//         {
+//             System.Console.Write($"{inputMatrix[i, j]}\t");
+//         }
+//         System.Console.WriteLine();
+//     }
+// }
+
+// int SumItemGeneralDiagonal(int[,] inputMatrix)
+// {
+//     int sumItem = 0;
+//     int sizeRows = inputMatrix.GetLength(0);
+//     int sizeColums = inputMatrix.GetLength(1);
+//     for (int i = 0; i < sizeRows; i++)
+//     {
+//         for (int j = 0; j < sizeColums; j++)
+//         {
+//             if(i == j) sumItem += inputMatrix[i, j];
+//             else sumItem += 0;
+//         }
+//     }
+//     return sumItem;
+// }
+
+
+// System.Console.WriteLine("write count rows: ");
+// int rows = int.Parse(Console.ReadLine()!);
+
+// System.Console.WriteLine("write count colums: ");
+// int colums = int.Parse(Console.ReadLine()!);
+
+// int[,] matrix = GetMatrix (rows, colums, 0, 10);
+// PrintMatrix(matrix);
+// System.Console.WriteLine();
+// int[,] result = GetNewMatrix(matrix);
+// PrintMatrix(result);
+// System.Console.WriteLine();
+// System.Console.WriteLine($"Сумма элементов главной диагонали: {SumItemGeneralDiagonal(result)}");
+
+// ==========================================================================================
+// ==========================================================================================
+
+//HomeWork
+
+/*
+Ex. 47 
+Двумерный массив nxm
+заполненный вещественными числами
+*/
+
+// double[,] GetMatrix (int rows, int colums, int minValue, int maxValue)
+// {
+//     double[,] matrix = new double[rows, colums];
+//     int sizeRows = matrix.GetLength(0);
+//     int sizeColums = matrix.GetLength(1);
+//         for (int i = 0; i < sizeRows; i++)
+//     {
+//         for (int j = 0; j < sizeColums; j++)
+//         {
+//             matrix[i, j] = new Random().NextDouble()*100;
+//         }
+//     }
+//     return matrix;
+// }
+// void PrintMatrix(double[,] inputMatrix)
+// {
+//     int sizeRows = inputMatrix.GetLength(0);
+//     int sizeColums = inputMatrix.GetLength(1);
+//     for (int i = 0; i < sizeRows; i++)
+//     {
+//         for (int j = 0; j < sizeColums; j++)
+//         {
+//             System.Console.Write($"{inputMatrix[i, j]}\t");
+//         }
+//         System.Console.WriteLine();
+//     }
+// }
+
+// System.Console.WriteLine("write count rows: ");
+// int rows = int.Parse(Console.ReadLine()!);
+
+// System.Console.WriteLine("write count colums: ");
+// int colums = int.Parse(Console.ReadLine()!);
+
+// double[,] matrix = GetMatrix (rows, colums, 1, 5);
+// PrintMatrix(matrix);
+// ==========================================================================================
