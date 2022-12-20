@@ -1645,15 +1645,6 @@
 Если N = 7 -> 0 1 1 2 3 5 8
 */
 
-// void PrintArray(int[] array)// Задание массива
-// {
-//     int size = array.Length;
-//     for (int i = 0; i < size; i++)
-//     {
-//         System.Console.Write($"{array[i]} ");
-//     }
-// }
-
 //var. 1 (recursia)
 // int Fibonacci(int len)// Заполнение массива
 // {
@@ -1667,13 +1658,15 @@
 //         System.Console.WriteLine($"f{i} = {Fibonacci(i)}, ");
 //     }
 
+// ==========================================================================================
+
 //var.2 
 
-int firstElement = 0;
-int secondElement = 1;
-int n = 7;
-Console.WriteLine($"1. = {firstElement}, ");
-Console.WriteLine($"2. = {secondElement}, ");
+// int firstElement = 0;
+// int secondElement = 1;
+// int n = 7;
+// Console.WriteLine($"1. = {firstElement}, ");
+// Console.WriteLine($"2. = {secondElement}, ");
 
 // for (int i = 3; i <= n; i++)// в данном случае i - это не индекс, а порядковый номер.
 // {
@@ -1682,3 +1675,35 @@ Console.WriteLine($"2. = {secondElement}, ");
 //     firstElement = secondElement;
 //     secondElement = nextElement;
 // }
+
+// ==========================================================================================
+// ==========================================================================================
+//HomeWork
+/*
+Задача 41: Пользователь вводит с клавиатуры M чисел. 
+Посчитайте, сколько чисел больше 0 ввёл пользователь.
+
+0, 7, 8, -2, -2 -> 2
+-1, -7, 567, 89, 223-> 3
+*/
+
+int[] GetArray(int len)
+{
+    int[] array = new int[len];
+    int size = array.Length;
+    for (int i = 0; i < size; i++)
+    {
+        System.Console.WriteLine("введите произольные ЦЕЛЫЕ числа:");
+        array[i] = int.Parse(Console.ReadLine()!);
+    }
+    return array;
+}
+
+Console.WriteLine("Введите сколько Вы хотите ввести чисел: ");
+int len = int.Parse(Console.ReadLine()!);
+int[] array = GetArray(len);
+System.Console.WriteLine($"[{string.Join(",", array)}]");
+// Console.WriteLine("Введите нижнюю границу диапазона: ");
+// int minValue = int.Parse(Console.ReadLine()!);
+// Console.WriteLine("Введите верхнюю границу диапазона: ");
+// int maxValue = int.Parse(Console.ReadLine()!);
