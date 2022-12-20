@@ -1726,28 +1726,28 @@ b1 = 2, k1 = 5, b2 = 4, k2 = 9 -> (-0,5; -0,5)
 
 */
 
-System.Console.WriteLine("введите значение b1:");
-double b1 = Convert.ToInt64(Console.ReadLine()!);
-System.Console.WriteLine("введите коэффициент k1:");
-double k1 = Convert.ToInt64(Console.ReadLine()!);
+// System.Console.WriteLine("введите значение b1:");
+// double b1 = Convert.ToInt64(Console.ReadLine()!);
+// System.Console.WriteLine("введите коэффициент k1:");
+// double k1 = Convert.ToInt64(Console.ReadLine()!);
 
-System.Console.WriteLine("введите значение b2:");
-double b2 = Convert.ToInt64(Console.ReadLine()!);
-System.Console.WriteLine("введите коэффициент k2:");
-double k2 = Convert.ToInt64(Console.ReadLine()!);
+// System.Console.WriteLine("введите значение b2:");
+// double b2 = Convert.ToInt64(Console.ReadLine()!);
+// System.Console.WriteLine("введите коэффициент k2:");
+// double k2 = Convert.ToInt64(Console.ReadLine()!);
 
-// double b1 = 2;
-// double k1 = 5;
-// double b2 = 4;
-// double k2 = 9;
+// // double b1 = 2;
+// // double k1 = 5;
+// // double b2 = 4;
+// // double k2 = 9;
 
-double x = ((b2 - b1) / (k1 - k2));
-System.Console.WriteLine("x = " + x);
-double y1 = k1 * x + b1;
-System.Console.WriteLine("y1 = " + y1);
-double y2 = k2 * x + b2;
-System.Console.WriteLine("y2 = " + y2);
+// double x = ((b2 - b1) / (k1 - k2));
+// System.Console.WriteLine("x = " + x);
+// double y1 = k1 * x + b1;
+// System.Console.WriteLine("y1 = " + y1);
+// double y2 = k2 * x + b2;
+// System.Console.WriteLine("y2 = " + y2);
 
-System.Console.WriteLine($"точка пересечений двух прямых равна ({x}, {y1})");
+// System.Console.WriteLine($"точка пересечений двух прямых равна ({x}, {y1})");
 
 // ==========================================================================================
