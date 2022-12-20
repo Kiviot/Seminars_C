@@ -1699,11 +1699,21 @@ int[] GetArray(int len)
     return array;
 }
 
+int CountNumber(int[] array)
+{
+int countNumber = 0;
+int size = array.Length;
+for (int i = 0; i < size; i++)
+    {
+        countNumber += array[i] > 0 ? 1 : 0;
+    }
+    return countNumber;
+}
 Console.WriteLine("Введите сколько Вы хотите ввести чисел: ");
 int len = int.Parse(Console.ReadLine()!);
 int[] array = GetArray(len);
 System.Console.WriteLine($"[{string.Join(",", array)}]");
-// Console.WriteLine("Введите нижнюю границу диапазона: ");
-// int minValue = int.Parse(Console.ReadLine()!);
-// Console.WriteLine("Введите верхнюю границу диапазона: ");
-// int maxValue = int.Parse(Console.ReadLine()!);
+int CountItems = CountNumber(array);
+System.Console.WriteLine(CountItems);
+
+// ==========================================================================================
