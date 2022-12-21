@@ -2030,7 +2030,7 @@ Ex. 47
 //     {
 //         for (int j = 0; j < sizeColums; j++)
 //         {
-//             matrix[i, j] = new Random().NextDouble()*100;
+//             matrix[i, j] = Math.Round(new Random().NextDouble()*100, 2);
 //         }
 //     }
 //     return matrix;
@@ -2058,3 +2058,151 @@ Ex. 47
 // double[,] matrix = GetMatrix (rows, colums, 1, 5);
 // PrintMatrix(matrix);
 // ==========================================================================================
+
+/*
+Задача 50. Напишите программу, которая на вход принимает позиции элемента в двумерном массиве, и возвращает значение этого элемента или же указание, что такого элемента нет.
+
+Например, задан массив:
+
+1 4 7 2
+
+5 9 2 3
+
+8 4 2 4
+
+17 -> такого числа в массиве нет
+*/
+
+// int[,] GetMatrix (int rows, int colums, int minValue, int maxValue)
+// {
+//     int[,] matrix = new int[rows, colums];
+//     int sizeRows = matrix.GetLength(0);
+//     int sizeColums = matrix.GetLength(1);
+//         for (int i = 0; i < sizeRows; i++)
+//     {
+//         for (int j = 0; j < sizeColums; j++)
+//         {
+//             matrix[i, j] = new Random().Next(minValue, maxValue +1);
+//         }
+//     }
+//     return matrix;
+// }
+
+// void PrintMatrix(int[,] inputMatrix)
+// {
+//     int sizeRows = inputMatrix.GetLength(0);
+//     int sizeColums = inputMatrix.GetLength(1);
+//     for (int i = 0; i < sizeRows; i++)
+//     {
+//         for (int j = 0; j < sizeColums; j++)
+//         {
+//             System.Console.Write($"{inputMatrix[i, j]}\t");
+//         }
+//         System.Console.WriteLine();
+//     }
+// }
+
+
+// System.Console.WriteLine("write count rows: ");
+// int rows = int.Parse(Console.ReadLine()!);
+
+// System.Console.WriteLine("write count colums: ");
+// int colums = int.Parse(Console.ReadLine()!);
+
+// int[,] matrix = GetMatrix (rows, colums, 1, 5);
+// PrintMatrix(matrix);
+// System.Console.WriteLine();
+
+// System.Console.WriteLine("Write index row:");
+// int indexItemRow = int.Parse(Console.ReadLine()!);
+// System.Console.WriteLine("Write index colum:");
+// int indexItemColum = int.Parse(Console.ReadLine()!); 
+
+// if(indexItemRow <=  matrix.GetLength(0) && indexItemColum <=  matrix.GetLength(1))
+//     {
+//         System.Console.WriteLine(matrix[indexItemRow, indexItemColum]);
+//     }
+// else System.Console.WriteLine("There is no element with such an index ");
+
+// ==========================================================================================
+
+/*
+Задача 52. Задайте двумерный массив из целых чисел. Найдите среднее арифметическое элементов в каждом столбце.
+
+Например, задан массив:
+1 4 7 2
+5 9 2 3
+8 4 2 4
+Среднее арифметическое каждого столбца: 4,6; 5,6; 3,6; 3.
+
+*/
+
+// int[,] GetMatrix (int rows, int colums, int minValue, int maxValue)
+// {
+//     int[,] matrix = new int[rows, colums];
+//     int sizeRows = matrix.GetLength(0);
+//     int sizeColums = matrix.GetLength(1);
+//         for (int i = 0; i < sizeRows; i++)
+//     {
+//         for (int j = 0; j < sizeColums; j++)
+//         {
+//             matrix[i, j] = new Random().Next(minValue, maxValue +1);
+//         }
+//     }
+//     return matrix;
+// }
+
+// void PrintMatrix(int[,] inputMatrix)
+// {
+//     int sizeRows = inputMatrix.GetLength(0);
+//     int sizeColums = inputMatrix.GetLength(1);
+//     for (int i = 0; i < sizeRows; i++)
+//     {
+//         for (int j = 0; j < sizeColums; j++)
+//         {
+//             System.Console.Write($"{inputMatrix[i, j]}\t");
+//         }
+//         System.Console.WriteLine();
+//     }
+// }
+
+// void AverageSumColumItem (int[,] inputMatrix)
+// {
+// int sizeRows = inputMatrix.GetLength(0);
+// int sizeColums = inputMatrix.GetLength(1);
+// double averageSumColumItem = 0;
+// double sumItem = 0;
+// int indexColum = 0;
+// for (indexColum = 0; indexColum < sizeRows; indexColum++)
+// {
+//     sumItem = 0;
+//     for (int i = 0; i < sizeRows; i++)
+//     {
+//         for (int j = 0; j < sizeColums; j++)
+//         {
+//             if(j == indexColum)
+//             {
+//                 sumItem += inputMatrix[i, j];
+//             }
+//         }
+//     }
+//     averageSumColumItem = Math.Round(sumItem / sizeRows, 2);
+//     Console.Write($"[{indexColum}]\t{sumItem} : {sizeRows} = {averageSumColumItem}\n");
+// }
+// }
+
+// System.Console.WriteLine("write count rows: ");
+// int rows = int.Parse(Console.ReadLine()!);
+
+// System.Console.WriteLine("write count colums: ");
+// int colums = int.Parse(Console.ReadLine()!);
+
+// int[,] matrix = GetMatrix (rows, colums, 1, 5);
+// PrintMatrix(matrix);
+// System.Console.WriteLine();
+
+// AverageSumColumItem(matrix);
+
+// ==========================================================================================
+// ==========================================================================================
+
