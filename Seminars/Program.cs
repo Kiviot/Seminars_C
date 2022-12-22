@@ -2215,7 +2215,7 @@ Ex. 47
 */
 string BinaryNumberSystem(int decimalNumber)
 {
-    string binaryNumber = "";
+    string binaryNumber = string.Empty;
     int tempChastnoe = 2;
     while (tempChastnoe > 0)
     {
@@ -2227,9 +2227,11 @@ string BinaryNumberSystem(int decimalNumber)
     return binaryNumber;
 }
 
-Console.WriteLine("Введите чисело для перевода в двоичную систему: ");
+Console.WriteLine("Введите число для перевода в двоичную систему: ");
 int decimalNumber = int.Parse(Console.ReadLine()!);
 
 string res = BinaryNumberSystem(decimalNumber);
 System.Console.WriteLine(res);
 
+// ==========================================================================================
+// ==========================================================================================
