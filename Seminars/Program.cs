@@ -2206,3 +2206,30 @@ Ex. 47
 // ==========================================================================================
 // ==========================================================================================
 
+/*
+Задача 43 
+Напишите программу, которая будет преобразовывать десятичное число в двоичное.
+45 -> 101101
+3 -> 11
+2 -> 10
+*/
+string BinaryNumberSystem(int decimalNumber)
+{
+    string binaryNumber = "";
+    int tempChastnoe = 2;
+    while (tempChastnoe > 0)
+    {
+        int ostatatok = decimalNumber % 2;
+        tempChastnoe = decimalNumber / 2;
+        binaryNumber = Convert.ToString(ostatatok) + binaryNumber;
+        decimalNumber = tempChastnoe;
+    }
+    return binaryNumber;
+}
+
+Console.WriteLine("Введите чисело для перевода в двоичную систему: ");
+int decimalNumber = int.Parse(Console.ReadLine()!);
+
+string res = BinaryNumberSystem(decimalNumber);
+System.Console.WriteLine(res);
+
