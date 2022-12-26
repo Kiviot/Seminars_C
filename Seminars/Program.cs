@@ -2411,67 +2411,121 @@ CLassWork
 */
 
 
-int[,] GetMatrix (int rows, int colums, int minValue, int maxValue)
-{
-    int[,] matrix = new int[rows, colums];
-    int sizeRows = matrix.GetLength(0);
-    int sizeColums = matrix.GetLength(1);
+// int[,] GetMatrix (int rows, int colums, int minValue, int maxValue)
+// {
+//     int[,] matrix = new int[rows, colums];
+//     int sizeRows = matrix.GetLength(0);
+//     int sizeColums = matrix.GetLength(1);
 
-        for (int i = 0; i < sizeRows; i++)
+//         for (int i = 0; i < sizeRows; i++)
+//     {
+//         for (int j = 0; j < sizeColums; j++)
+//         {
+//             matrix[i, j] = new Random().Next(minValue, maxValue +1);
+//         }
+//     }
+//     return matrix;
+// }
+
+// void PrintMatrix(int[,] inputMatrix)
+// {
+//     int sizeRows = inputMatrix.GetLength(0);
+//     int sizeColums = inputMatrix.GetLength(1);
+//     for (int i = 0; i < sizeRows; i++)
+//     {
+//         for (int j = 0; j < sizeColums; j++)
+//         {
+//             System.Console.Write($"{inputMatrix[i, j]}\t");
+//         }
+//         System.Console.WriteLine();
+//     }
+// }
+
+// int[,] SwapMatrix(int[,] inputMatrix)// swap colums and rows
+// {
+//     int sizeRows = inputMatrix.GetLength(0);
+//     int sizeColums = inputMatrix.GetLength(1);
+//     int[,] swap = new int[sizeRows, sizeColums];
+//     for (int i = 0; i < sizeRows; i++)
+//     {
+//         for (int j = 0; j < sizeColums; j++)
+//         {
+//                 swap[j, i] = inputMatrix[i, j];
+//         }
+//     }
+//     return swap;
+// }
+
+// System.Console.WriteLine("write count rows: ");
+// int rows = int.Parse(Console.ReadLine()!);
+
+// System.Console.WriteLine("write count colums: ");
+// int colums = int.Parse(Console.ReadLine()!);
+
+
+// if(rows != colums) // Error
+// {
+//     System.Console.WriteLine("ERROR: The matrix is'n square");
+//     return;
+// } 
+
+// int[,] matrix = GetMatrix (rows, colums, 1, 5);
+
+// PrintMatrix(matrix);
+// System.Console.WriteLine();
+
+// PrintMatrix(SwapMatrix(matrix));
+
+// ==========================================================================================
+/*
+Задача 59: Задайте двумерный массив из целых чисел. 
+Напишите программу, которая удалит строку и столбец, 
+на пересечении которых расположен наименьший элемент массива.
+Например, задан массив:
+1 4 7 2
+5 9 2 3
+8 4 2 4
+5 2 6 7
+Наименьший элемент - 1, на выходе получим 
+следующий массив:
+9 4 2
+2 2 6
+3 4 7
+*/
+
+int rows = 3;
+int columns = 3;
+int min = int.MaxValue; // Изначально массив заполнен нулями
+int indexRows = 0;
+int indexColumns = 0; // min = 0
+int[,] matrix = new int[rows, columns];
+for (int i = 0; i < rows; i++) // по строчкам 
+{
+    for (int j = 0; j < columns; j++) // по столбцам 
     {
-        for (int j = 0; j < sizeColums; j++)
+        matrix[i, j] = new Random().Next(10, 100); // [0-10]
+        Console.Write(matrix[i, j] + "\t"); // "\t" = Tab  
+        if (min > matrix[i, j]) // 30 > 20, 20 = min
         {
-            matrix[i, j] = new Random().Next(minValue, maxValue +1);
+            indexRows = i; // Номер строчки
+            indexColumns = j; // Номер столбца
+            min = matrix[i, j]; // перезапись элемента
         }
     }
-    return matrix;
+    Console.WriteLine();
 }
-
-void PrintMatrix(int[,] inputMatrix)
+Console.WriteLine($"Минимум: {min},Cтрочка: {indexRows},столбец: {indexColumns}");
+for (int i = 0; i < rows; i++)
 {
-    int sizeRows = inputMatrix.GetLength(0);
-    int sizeColums = inputMatrix.GetLength(1);
-    for (int i = 0; i < sizeRows; i++)
+    if (indexRows != i) // Номер строчки с минимальным элементом в цифл for не попадает
     {
-        for (int j = 0; j < sizeColums; j++)
+        for (int j = 0; j < columns; j++)
         {
-            System.Console.Write($"{inputMatrix[i, j]}\t");
+            if (indexColumns != j)
+            {
+                Console.Write(matrix[i, j] + "\t");
+            }
         }
-        System.Console.WriteLine();
+        Console.WriteLine();
     }
 }
-
-int[,] SwapMatrix(int[,] inputMatrix)// swap colums and rows
-{
-    int sizeRows = inputMatrix.GetLength(0);
-    int sizeColums = inputMatrix.GetLength(1);
-    int[,] swap = new int[sizeRows, sizeColums];
-    for (int i = 0; i < sizeRows; i++)
-    {
-        for (int j = 0; j < sizeColums; j++)
-        {
-                swap[j, i] = inputMatrix[i, j];
-        }
-    }
-    return swap;
-}
-
-System.Console.WriteLine("write count rows: ");
-int rows = int.Parse(Console.ReadLine()!);
-
-System.Console.WriteLine("write count colums: ");
-int colums = int.Parse(Console.ReadLine()!);
-
-
-if(rows != colums) // Error
-{
-    System.Console.WriteLine("ERROR: The matrix is'n square");
-    return;
-} 
-
-int[,] matrix = GetMatrix (rows, colums, 1, 5);
-
-PrintMatrix(matrix);
-System.Console.WriteLine();
-
-PrintMatrix(SwapMatrix(matrix));
