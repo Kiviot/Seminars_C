@@ -2213,25 +2213,100 @@ Ex. 47
 3 -> 11
 2 -> 10
 */
-string BinaryNumberSystem(int decimalNumber)
-{
-    string binaryNumber = string.Empty;
-    int tempChastnoe = 2;
-    while (tempChastnoe > 0)
-    {
-        int ostatatok = decimalNumber % 2;
-        tempChastnoe = decimalNumber / 2;
-        binaryNumber = Convert.ToString(ostatatok) + binaryNumber;
-        decimalNumber = tempChastnoe;
-    }
-    return binaryNumber;
-}
+// string BinaryNumberSystem(int decimalNumber)
+// {
+//     string binaryNumber = string.Empty;
+//     int tempChastnoe = 2;
+//     while (tempChastnoe > 0)
+//     {
+//         int ostatatok = decimalNumber % 2;
+//         tempChastnoe = decimalNumber / 2;
+//         binaryNumber = Convert.ToString(ostatatok) + binaryNumber;
+//         decimalNumber = tempChastnoe;
+//     }
+//     return binaryNumber;
+// }
 
-Console.WriteLine("Введите число для перевода в двоичную систему: ");
-int decimalNumber = int.Parse(Console.ReadLine()!);
+// Console.WriteLine("Введите число для перевода в двоичную систему: ");
+// int decimalNumber = int.Parse(Console.ReadLine()!);
 
-string res = BinaryNumberSystem(decimalNumber);
-System.Console.WriteLine(res);
+// string res = BinaryNumberSystem(decimalNumber);
+// System.Console.WriteLine(res);
 
 // ==========================================================================================
 // ==========================================================================================
+
+/*
+Задача 52. Задайте двумерный массив из целых чисел. Найдите среднее арифметическое элементов в каждом столбце.
+
+Например, задан массив:
+1 4 7 2
+5 9 2 3
+8 4 2 4
+Среднее арифметическое каждого столбца: 4,6; 5,6; 3,6; 3.
+
+*/
+
+// int[,] GetMatrix (int rows, int colums, int minValue, int maxValue)
+// {
+//     int[,] matrix = new int[rows, colums];
+//     int sizeRows = matrix.GetLength(0);
+//     int sizeColums = matrix.GetLength(1);
+//         for (int i = 0; i < sizeRows; i++)
+//     {
+//         for (int j = 0; j < sizeColums; j++)
+//         {
+//             matrix[i, j] = new Random().Next(minValue, maxValue +1);
+//         }
+//     }
+//     return matrix;
+// }
+
+// void PrintMatrix(int[,] inputMatrix)
+// {
+//     int sizeRows = inputMatrix.GetLength(0);
+//     int sizeColums = inputMatrix.GetLength(1);
+//     for (int i = 0; i < sizeRows; i++)
+//     {
+//         for (int j = 0; j < sizeColums; j++)
+//         {
+//             System.Console.Write($"{inputMatrix[i, j]}\t");
+//         }
+//         System.Console.WriteLine();
+//     }
+// }
+
+// void AverageSumColumItem (int[,] inputMatrix)
+// {
+// int sizeRows = inputMatrix.GetLength(0);
+// int sizeColums = inputMatrix.GetLength(1);
+// double averageSumColumItem = 0;
+// double sumItem = 0;
+// for (int j = 0; j < sizeColums; j++)
+// {
+//     sumItem = 0;
+//     for (int i = 0; i < sizeRows; i++)
+//     {
+//         sumItem = inputMatrix[i, j] + sumItem;
+//     }
+//     averageSumColumItem = Math.Round(sumItem / sizeRows, 2);
+//     Console.Write($"[{j+1}]\t{sumItem} : {sizeRows} = {averageSumColumItem}\n");
+// }
+
+// }
+
+// System.Console.WriteLine("write count rows: ");
+// int rows = int.Parse(Console.ReadLine()!);
+
+// System.Console.WriteLine("write count colums: ");
+// int colums = int.Parse(Console.ReadLine()!);
+
+// int[,] matrix = GetMatrix (rows, colums, 1, 5);
+// PrintMatrix(matrix);
+// System.Console.WriteLine();
+
+// AverageSumColumItem(matrix);
+
+// ==========================================================================================
+// ==========================================================================================
+
