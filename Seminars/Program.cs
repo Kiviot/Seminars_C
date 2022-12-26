@@ -2309,4 +2309,169 @@ Ex. 47
 
 // ==========================================================================================
 // ==========================================================================================
+/* 
+CLassWork
+*/
+/*
+Задача 43 Recurcia
+Напишите программу, которая будет преобразовывать десятичное число в двоичное.
+45 -> 101101
+3 -> 11
+2 -> 10
+*/
 
+// void ToBinary(int num)
+// {
+// // Базовый случай - выход из рекурсии
+// if (num == 0)// if num == 0 => out of recyrcia
+// {
+// return; // Завершение работы функции
+// }
+// // Рекурсивный - вызов функции саму через себя
+// ToBinary(num / 2);
+// Console.Write(num % 2);
+// }
+
+// System.Console.WriteLine("write number: ");
+// int number = int.Parse(Console.ReadLine()!); // Десятичное число для перевода
+
+// ToBinary(number);
+
+// ==========================================================================================
+
+/*
+Задача 53: Задайте двумерный массив. 
+Напишите программу, которая поменяет местами первую и последнюю строку массива.
+*/
+
+
+/// m - count rows, n - count colums
+/// min, max
+
+// int[,] GetMatrix(int m, int n, int min, int max)
+// {
+//     int[,] matrix = new int[m, n];
+//     for (int i = 0; i < m; i++)
+//     {
+//         for (int j = 0; j < n; j++)
+//         {
+//             matrix[i,j] = new Random().Next(min, max + 1);
+//         }
+//     }
+//     return matrix;
+// }
+
+// void PrintMatrix(int[,] inputMatrix)
+// {
+//     int sizeRows = inputMatrix.GetLength(0);
+//     int sizeColums = inputMatrix.GetLength(1);
+//     for (int i = 0; i < sizeRows; i++)
+//     {
+//         for (int j = 0; j < sizeColums; j++)
+//         {
+//             System.Console.Write($"{inputMatrix[i, j]}\t");
+//         }
+//         System.Console.WriteLine();
+//     }
+// }
+
+// void SwapMatrix(int[,] inputMatrix)// swap first and last rows
+// {
+//     int lastRowIndex = inputMatrix.GetLength(0) - 1; //save index last row
+//     int sizeRows = inputMatrix.GetLength(0);
+//     int sizeColums = inputMatrix.GetLength(1);
+//     for (int j = 0; j < sizeColums; j++)
+//     {
+//         int temp = inputMatrix[0, j];
+//         inputMatrix[0, j] = inputMatrix[lastRowIndex, j];
+//         inputMatrix[lastRowIndex, j] = temp;
+//     }
+// }
+
+
+// System.Console.WriteLine("write count rows: ");
+// int rows = int.Parse(Console.ReadLine()!);
+
+// System.Console.WriteLine("write count colums: ");
+// int colums = int.Parse(Console.ReadLine()!);
+
+// int[,] matrix = GetMatrix (rows, colums, 1, 5);
+// PrintMatrix(matrix);
+// System.Console.WriteLine();
+
+// SwapMatrix(matrix);
+// PrintMatrix(matrix);
+
+// ==========================================================================================
+
+/*
+Задача 55: Задайте двумерный массив. 
+Напишите программу, которая заменяет строки на столбцы. 
+В случае, если это невозможно, программа должна вывести сообщение для пользователя.
+*/
+
+
+int[,] GetMatrix (int rows, int colums, int minValue, int maxValue)
+{
+    int[,] matrix = new int[rows, colums];
+    int sizeRows = matrix.GetLength(0);
+    int sizeColums = matrix.GetLength(1);
+
+        for (int i = 0; i < sizeRows; i++)
+    {
+        for (int j = 0; j < sizeColums; j++)
+        {
+            matrix[i, j] = new Random().Next(minValue, maxValue +1);
+        }
+    }
+    return matrix;
+}
+
+void PrintMatrix(int[,] inputMatrix)
+{
+    int sizeRows = inputMatrix.GetLength(0);
+    int sizeColums = inputMatrix.GetLength(1);
+    for (int i = 0; i < sizeRows; i++)
+    {
+        for (int j = 0; j < sizeColums; j++)
+        {
+            System.Console.Write($"{inputMatrix[i, j]}\t");
+        }
+        System.Console.WriteLine();
+    }
+}
+
+int[,] SwapMatrix(int[,] inputMatrix)// swap colums and rows
+{
+    int sizeRows = inputMatrix.GetLength(0);
+    int sizeColums = inputMatrix.GetLength(1);
+    int[,] swap = new int[sizeRows, sizeColums];
+    for (int i = 0; i < sizeRows; i++)
+    {
+        for (int j = 0; j < sizeColums; j++)
+        {
+                swap[j, i] = inputMatrix[i, j];
+        }
+    }
+    return swap;
+}
+
+System.Console.WriteLine("write count rows: ");
+int rows = int.Parse(Console.ReadLine()!);
+
+System.Console.WriteLine("write count colums: ");
+int colums = int.Parse(Console.ReadLine()!);
+
+
+if(rows != colums) // Error
+{
+    System.Console.WriteLine("ERROR: The matrix is'n square");
+    return;
+} 
+
+int[,] matrix = GetMatrix (rows, colums, 1, 5);
+
+PrintMatrix(matrix);
+System.Console.WriteLine();
+
+PrintMatrix(SwapMatrix(matrix));
