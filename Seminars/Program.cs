@@ -2493,39 +2493,531 @@ CLassWork
 3 4 7
 */
 
-int rows = 3;
-int columns = 3;
-int min = int.MaxValue; // Изначально массив заполнен нулями
-int indexRows = 0;
-int indexColumns = 0; // min = 0
-int[,] matrix = new int[rows, columns];
-for (int i = 0; i < rows; i++) // по строчкам 
-{
-    for (int j = 0; j < columns; j++) // по столбцам 
-    {
-        matrix[i, j] = new Random().Next(10, 100); // [0-10]
-        Console.Write(matrix[i, j] + "\t"); // "\t" = Tab  
-        if (min > matrix[i, j]) // 30 > 20, 20 = min
-        {
-            indexRows = i; // Номер строчки
-            indexColumns = j; // Номер столбца
-            min = matrix[i, j]; // перезапись элемента
-        }
-    }
-    Console.WriteLine();
-}
-Console.WriteLine($"Минимум: {min},Cтрочка: {indexRows},столбец: {indexColumns}");
-for (int i = 0; i < rows; i++)
-{
-    if (indexRows != i) // Номер строчки с минимальным элементом в цифл for не попадает
-    {
-        for (int j = 0; j < columns; j++)
-        {
-            if (indexColumns != j)
-            {
-                Console.Write(matrix[i, j] + "\t");
-            }
-        }
-        Console.WriteLine();
-    }
-}
+// Задача 59
+
+// int rows = 3;
+// int columns = 3;
+// int min = int.MaxValue; // Изначально массив заполнен нулями
+// int indexRows = 0;
+// int indexColumns = 0; // min = 0
+// int[,] matrix = new int[rows, columns];
+// for (int i = 0; i < rows; i++) // по строчкам 
+// {
+//     for (int j = 0; j < columns; j++) // по столбцам 
+//     {
+//         matrix[i, j] = new Random().Next(10, 100); // [0-10]
+//         Console.Write(matrix[i, j] + "\t"); // "\t" = Tab  
+//         if (min > matrix[i, j]) // 30 > 20, 20 = min
+//         {
+//             indexRows = i; // Номер строчки
+//             indexColumns = j; // Номер столбца
+//             min = matrix[i, j]; // перезапись элемента
+//         }
+//     }
+//     Console.WriteLine();
+// }
+// Console.WriteLine($"Минимум: {min},Cтрочка: {indexRows},столбец: {indexColumns}");
+// for (int i = 0; i < rows; i++)
+// {
+//     if (indexRows != i) // Номер строчки с минимальным элементом в цифл for не попадает
+//     {
+//         for (int j = 0; j < columns; j++)
+//         {
+//             if (indexColumns != j)
+//             {
+//                 Console.Write(matrix[i, j] + "\t");
+//             }
+//         }
+//         Console.WriteLine();
+//     }
+// }
+// ==========================================================================================
+// ==========================================================================================
+
+
+// HomeWork
+
+
+/// Ниже сортировка для одномерного массива.
+// int[] GetArray (int length, int minNumber, int MaxValue) 
+// {
+//         int[] array = new int[length];
+//         int size = array.Length;
+//         for (int i = 0; i < size; i++)
+//         {
+//                 array[i] = new Random().Next(1, 10);
+//         }
+//         return array;
+// }
+// void PrintArray(int[] array)
+// {
+//         int size = array.Length;
+//         for (int i = 0; i < size; i++)
+//         {
+//                 System.Console.Write($"{array[i]} \t");
+//         }
+//         System.Console.WriteLine();        
+// }
+
+// void BoobleSort (int[] array)
+// {
+//         int size = array.Length;
+//         int temp = 0;
+//         for (int i = 0; i < size; i++)
+//         {
+//                 for (int j = i + 1; j < size; j++)
+//                         if(array[i] < array[j])
+//                         {
+//                                 temp = array[i];
+//                                 array[i] = array[j];
+//                                 array[j] = temp; 
+//                         }
+//         }
+// }
+
+// int[] inputArray = GetArray (5, 0, 10);
+// PrintArray(inputArray);
+
+// System.Console.WriteLine();
+
+// BoobleSort (inputArray);
+// PrintArray(inputArray);
+
+
+/*
+Задача 54: Задайте двумерный массив. Напишите программу, 
+которая упорядочит по убыванию элементы каждой строки двумерного массива.
+2   4        4  2
+        => 
+6   8        8  6
+*/
+
+//Задача 54_Booble sort
+// int[,] GetMatrix(int rows, int colums, int minValue, int maxValue)
+// {
+//         int[,] matrix = new int[rows, colums];
+//         int sizeRows = matrix.GetLength(0);
+//         int sizeColums = matrix.GetLength(1);
+//         for (int i = 0; i < sizeRows; i++)
+//         {
+//                 for (int j = 0; j < sizeColums; j++)
+//                 {
+//                         matrix[i, j] = new Random().Next(minValue, maxValue + 1);
+//                 }
+//         }
+//         return matrix;
+// }
+
+// void PrintMatrix(int[,] inputMatrix)
+// {
+//     int sizeRows = inputMatrix.GetLength(0);
+//     int sizeColums = inputMatrix.GetLength(1);
+//     for (int i = 0; i < sizeRows; i++)
+//     {
+//         for (int j = 0; j < sizeColums; j++)
+//         {
+//             System.Console.Write($"{inputMatrix[i, j]}\t");
+//         }
+//         System.Console.WriteLine();
+//     }
+// }
+
+// void BoobleSortedRows (int[,] matrix)
+// {
+//         int sizeRows = matrix.GetLength(0);
+//         int sizeColums = matrix.GetLength(1);
+//         for (int i = 0; i < sizeRows; i++)
+//         {
+//                 for (int j = 0; j < sizeColums; j++)
+//                 {
+//                         for (int k = j + 1; k < sizeColums; k++)
+//                         {
+//                                 if (matrix [i, j] < matrix [i, k])
+//                                 {
+//                                         int temp = matrix [i, j];
+//                                         matrix [i, j] = matrix [i, k];
+//                                         matrix [i, k] = temp;
+//                                 }
+//                         }
+//                 }
+//         }
+// }
+
+// System.Console.WriteLine("write count rows: ");
+// int rows = int.Parse(Console.ReadLine()!);
+
+// System.Console.WriteLine("write count colums: ");
+// int colums = int.Parse(Console.ReadLine()!);
+// System.Console.WriteLine();
+
+// int[,] inputMatrix = GetMatrix (rows, colums, 1, 5);
+// PrintMatrix(inputMatrix);
+
+// System.Console.WriteLine();
+
+// BoobleSortedRows(inputMatrix);
+// PrintMatrix(inputMatrix);
+
+
+/*
+Задача 56: Задайте прямоугольный двумерный массив. 
+Напишите программу, которая будет находить строку с наименьшей суммой элементов.
+
+1   2   3       Summa = 6
+            =>               =>     indexMinSum (rows) = 0
+5   6   4       Summa = 15
+*/
+
+// Задача 56
+// int[,] GetMatrix(int rows, int colums, int minValue, int maxValue)
+// {
+//         int[,] matrix = new int[rows, colums];
+//         int sizeRows = matrix.GetLength(0);
+//         int sizeColums = matrix.GetLength(1);
+//         for (int i = 0; i < sizeRows; i++)
+//         {
+//                 for (int j = 0; j < sizeColums; j++)
+//                 {
+//                         matrix[i, j] = new Random().Next(minValue, maxValue + 1);
+//                 }
+//         }
+//         return matrix;
+// }
+
+// void PrintMatrix(int[,] inputMatrix)
+// {
+//     int sizeRows = inputMatrix.GetLength(0);
+//     int sizeColums = inputMatrix.GetLength(1);
+//     for (int i = 0; i < sizeRows; i++)
+//     {
+//         for (int j = 0; j < sizeColums; j++)
+//         {
+//             System.Console.Write($"{inputMatrix[i, j]}\t");
+//         }
+//         System.Console.WriteLine();
+//     }
+// }
+
+// void MaxSumRow (int[,] inputMatrix)
+// {
+//     int sizeRows = inputMatrix.GetLength(0);
+//     int sizeColums = inputMatrix.GetLength(1);
+//     int maxSum = 0;
+//     int index = 0;
+//     for (int i = 0; i < sizeRows; i++)
+//     {
+//         int sumItemRow = 0;
+//         for (int j = 0; j < sizeColums; j++)
+//         {
+//             sumItemRow += inputMatrix[i, j];
+//         }
+//         if(sumItemRow > maxSum) 
+//         {
+//                 maxSum  = sumItemRow;
+//                 index = i + 1;
+//         }
+//         System.Console.Write($"сумма элементов строки {i + 1}:\t{sumItemRow}");
+//         System.Console.WriteLine();
+//     }
+//     System.Console.Write($"максимальная сумма элементов в строке {index}: {maxSum}");
+// }
+
+
+// System.Console.WriteLine("write count rows: ");
+// int rows = int.Parse(Console.ReadLine()!);
+
+// System.Console.WriteLine("write count colums: ");
+// int colums = int.Parse(Console.ReadLine()!);
+
+// System.Console.WriteLine();
+
+// if(rows == colums) // Error
+// {
+//     System.Console.WriteLine("ERROR: The entered matrix is not rectangular");
+//     return;
+// } 
+
+
+
+// int[,] matrix = GetMatrix (rows, colums, 1, 5);
+
+// PrintMatrix(matrix);
+// System.Console.WriteLine();
+
+// MaxSumRow(matrix);
+
+
+/*
+Задача 58: Задайте две матрицы. Напишите программу, которая будет находить произведение двух матриц.
+1   2   |   4   5           4   10
+        |            =>  
+4   6   |   6   10          24  60
+*/
+
+// Задача 58
+
+// int[,] GetMatrix (int rows, int colums, int minValue, int maxValue)
+// {
+//         int[,] matrix = new int[rows, colums];
+//         int sizeRows = matrix.GetLength(0);
+//         int sizeColums = matrix.GetLength(1);
+//         for (int i = 0; i < sizeRows; i++)
+//         {
+//                 for (int j = 0; j < sizeColums; j++)
+//                 {
+//                         matrix[i, j] = new Random().Next(minValue, maxValue);
+//                 }
+//         }
+//         return matrix;
+// }
+
+// void PrintMatrix(int[,] inputMatrix)
+// {
+//         int sizeRows = inputMatrix.GetLength(0);
+//         int sizeColums = inputMatrix.GetLength(1);
+//         for (int i = 0; i < sizeRows; i++)
+//         {
+//                 for (int j = 0; j < sizeColums; j++)
+//                 {
+//                         System.Console.Write($"{inputMatrix[i, j]}\t");
+//                 }
+//                 System.Console.WriteLine();
+//                 System.Console.WriteLine();
+//         }
+// }
+
+// int[,] MultipliMatrix (int[,] matrixFirst, int[,] matrixSecond)
+// {
+//         int firstRows = matrixFirst.GetLength(0); // i число строк результирующей матрицы
+//         int firstColums = matrixFirst.GetLength(1); // n firstColums == secondRows обязательное условие
+//         int secondRows = matrixSecond.GetLength(0); // n firstColums == secondRows обязательное условие      
+//         int secondColums = matrixSecond.GetLength(1); // число столбцов результирующей матрицы
+//         int[,] multipliMatrix = new int[firstRows, secondColums];
+        
+//         for (int i = 0; i < firstRows; i++)
+//         {
+//                 for (int j = 0; j < secondColums; j++)
+//                 {
+//                         int scalarMultiplier = 0;
+//                         int scalarSum = 0;
+//                         for (int n = 0; n < firstColums; n++)
+//                         {
+//                                 scalarMultiplier = matrixFirst [i, n] * matrixSecond [n, j];
+//                                 scalarSum += scalarMultiplier; 
+//                         }
+//                         multipliMatrix [i, j] = scalarSum;
+//                 }
+//         }   
+//         return multipliMatrix;
+// }
+
+// System.Console.WriteLine("write count rows: ");
+// int rows = int.Parse(Console.ReadLine()!);
+
+// System.Console.WriteLine("write count colums: ");
+// int colums = int.Parse(Console.ReadLine()!);
+
+// System.Console.WriteLine("write count secondRows: ");
+// int secondRows = int.Parse(Console.ReadLine()!);
+
+// System.Console.WriteLine("write count secondColums: ");
+// int secondColums = int.Parse(Console.ReadLine()!);
+
+// System.Console.WriteLine();
+
+// if(colums != secondRows)
+// {
+//         System.Console.WriteLine("Error: Умножение не возможно!");
+//         return;
+// }
+
+// int[,] matrixFirst = GetMatrix (rows, colums, 1, 5);
+// PrintMatrix(matrixFirst);
+
+// System.Console.WriteLine();
+// System.Console.WriteLine();
+
+// int[,] matrixSecond = GetMatrix (secondRows, secondColums, 1, 5);
+// PrintMatrix(matrixSecond);
+
+// System.Console.WriteLine();
+// System.Console.WriteLine();
+
+// int[,] multipliMatrix = MultipliMatrix (matrixFirst, matrixSecond);
+// PrintMatrix(multipliMatrix);
+
+/*
+Задача 60: Сформируйте трёхмерный массив из неповторяющихся двузначных чисел. 
+Напишите программу, которая будет построчно выводить массив, добавляя индексы каждого элемента.
+*/
+
+// Задача 60
+
+// // int[] GetArray (int length, int minValue, int maxValue)
+// // {
+// //     int[] array = new int[length];
+// //     int size = array.Length;
+// //     for (int i = 0; i < size; i++)
+// //     {
+// //         if (array[i]<maxValue)
+// //         {
+// //         array[i] = minValue;
+// //         minValue++;
+// //         }
+// //         else break;
+// //     }
+// //     return array;
+// // }
+
+// // void PrintArray(int[] array)
+// // {
+// //         int size = array.Length;
+// //         for (int i = 0; i < size; i++)
+// //         {
+// //                 System.Console.Write($"{array[i]}\t");
+// //         }
+// // }
+
+// // int minValue = 10;
+// // int maxValue = 100;
+// // int length = 12;
+// // int[] array = GetArray(length, minValue, maxValue);
+
+// // PrintArray(array);
+
+
+// int[,,] Get3DArray (int rows, int colums, int depth, int minValue, int maxValue)
+// {
+//     int[,,] array3d = new int[rows, colums, depth];
+//     int sizeRows = array3d.GetLength(0);
+//     int sizeColums = array3d.GetLength(1);
+//     int sizeDepth = array3d.GetLength(2);
+
+//         for (int i = 0; i < sizeRows; i++)
+//     {
+//         for (int j = 0; j < sizeColums; j++)
+//         {
+//             for (int k = 0; k < sizeDepth; k++)
+//             {
+//                 if (array3d[i, j, k] < maxValue)
+//                 {
+//                         array3d[i, j, k] = minValue;
+//                         minValue++;
+//                 }
+//                 else break;
+//             }
+//         }
+//     }
+//     return array3d;
+// }
+
+// void Print3DArray(int[,,] input3DArray)
+// {
+//     int sizeRows = input3DArray.GetLength(0);
+//     int sizeColums = input3DArray.GetLength(1);
+//     int sizeDepth = input3DArray.GetLength(2);
+//     for (int i = 0; i < sizeRows; i++)
+//     {
+//         for (int j = 0; j < sizeColums; j++)
+//         {
+//             for (int k = 0; k < sizeDepth; k++)
+//             {
+//                 System.Console.WriteLine($"{input3DArray[i, j, k]}\t ({i}, {j}, {k})\t");
+//             }
+//         }
+//         System.Console.WriteLine();
+//     }
+// }
+
+// System.Console.WriteLine("write count rows: ");
+// int rows = int.Parse(Console.ReadLine()!);
+
+// System.Console.WriteLine("write count colums: ");
+// int colums = int.Parse(Console.ReadLine()!);
+
+// System.Console.WriteLine("write count depth: ");
+// int depth = int.Parse(Console.ReadLine()!);
+
+
+// int[,,] input3DArray = Get3DArray (rows, colums, depth, 10, 99);
+
+// Print3DArray(input3DArray);
+// System.Console.WriteLine();
+
+
+/*
+Задача 62: Заполните спирально массив 4 на 4.
+*/
+
+// Задача 62
+
+// int [,] GetMatrix (int rows, int colums)
+// {
+//         int[,] matrix = new int[rows, colums];
+//         int sizeRows = matrix.GetLength(0);
+//         int sizeColums = matrix.GetLength(1);
+//         int CountItems = sizeRows * sizeColums;
+//         int number = 1; // заполнение клеток
+//         int i = 0;
+//         int j = -1;
+//         int driveI = 0; // перемещение по строкам (-1; 0; 1) (вверх; без перемещения; вниз)
+//         int driveJ = 1; // перемещение по столбцам (-1; 0; 1) (влево; без перемещения; вправо)
+//         while (number <= CountItems)
+//         {
+//                 if (i + driveI >= 0 &&  i + driveI < sizeRows && j + driveJ >= 0 &&  j + driveJ < sizeColums && matrix [i + driveI, j + driveJ] == 0)
+//                 {
+//                         i += driveI;
+//                         j += driveJ;
+//                         matrix [i, j] = number;
+//                         number ++;
+//                 }
+//                 else 
+//                 {
+//                         if (driveJ == 1)
+//                         {
+//                                 driveJ = 0;
+//                                 driveI = 1;
+//                         }
+//                         else if (driveI == 1)
+//                         {
+//                                 driveI = 0;  
+//                                 driveJ = -1;
+//                         }
+//                         else if (driveJ == -1)
+//                         {
+//                                 driveJ = 0;
+//                                 driveI = -1;
+//                         }
+//                         else if (driveI == -1)
+//                         {
+//                                 driveI = 0;
+//                                 driveJ = 1;
+//                         }
+//                 }
+//         }
+//         return matrix;
+// }
+
+// void PrintMatrix(int[,] inputMatrix)
+// {
+//         int sizeRows = inputMatrix.GetLength(0);
+//         int sizeColums = inputMatrix.GetLength(1);
+//         for (int i = 0; i < sizeRows; i++)
+//         {
+//                 for (int j = 0; j < sizeColums; j++)
+//                 {
+//                         System.Console.Write($"{inputMatrix[i, j]}\t");
+//                 }
+//                 System.Console.WriteLine();
+//                 System.Console.WriteLine();
+//         }
+// }
+
+// int rows = 5;
+
+// int colums = 5;
+
+
+// int[,] matrix = GetMatrix(rows, colums);
+
+// PrintMatrix(matrix);
