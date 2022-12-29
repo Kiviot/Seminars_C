@@ -3013,11 +3013,120 @@ CLassWork
 //         }
 // }
 
-// int rows = 5;
+// int rows = 9;
 
-// int colums = 5;
+// int colums = 3;
 
 
 // int[,] matrix = GetMatrix(rows, colums);
 
 // PrintMatrix(matrix);
+
+/// ClassWork
+
+
+// Задание матрицы в один цикл. плюс альтернативная запись рандома
+
+// int rows = 2;
+// int columns = 2;
+// int[,] matrix = new int[2, 2]; // 2 строчки, 2 столбца
+// Random rand = new Random(); // если рандом надо включать несколько раз можно сформировать сокращенный вид rand.Next();
+
+// for (int i = 0; i < rows * columns; i++)
+// {
+// matrix[i / columns, i % columns] = rand.Next(11);
+// }
+
+// void PrintMatrix(int[,] matrix)
+// {
+//         int size = matrix.Length;
+//         int sizeRows = matrix.GetLength(0);
+//         int sizeColums = matrix.GetLength(1);
+//         for (int i = 0; i < size; i++)
+//         {
+//                 System.Console.Write($"{matrix[i / columns, i % columns]} \t");
+//                 if (i % columns == sizeColums - 1) System.Console.WriteLine($"\n");
+//         }
+//         System.Console.WriteLine();        
+// }
+
+// PrintMatrix (matrix);
+
+///Факториал через рекурсию
+
+// int Factorial (int number) // 
+// {
+//         if (number == 1)
+//         {
+//                 return 1;
+//         }
+//         return number * Factorial (number - 1);
+// }
+// int number = 4;
+// System.Console.WriteLine(Factorial(number));
+
+
+/*
+Задача 63: Задайте значение N. Напишите программу, которая выведет все натуральные числа в промежутке от 1 до N.
+N = 5 -> "1, 2, 3, 4, 5"
+N = 6 -> "1, 2, 3, 4, 5, 6"
+*/
+
+// Задача 63
+
+// int N = Convert.ToInt32(Console.ReadLine());
+
+// string PrintNumbers(int start, int end)
+// {
+//         if (start == end) return start.ToString();
+//         return (start + ", " + PrintNumbers(start + 1, end));
+// }
+// System.Console.WriteLine(PrintNumbers(1, N));
+
+
+/*
+Задача 67: Напишите программу, которая будет принимать на вход число и возвращать сумму его цифр.
+453 -> 12
+45 -> 9
+*/
+
+// Задача 67
+
+// System.Console.WriteLine("Write N:");
+// int N = Convert.ToInt32(Console.ReadLine());
+
+// int SumItem (int number)
+// {
+//         if (number == 0) // либо number % 10 == 0
+//         {
+//                 return 0;
+//         }
+//         return (number % 10 + SumItem(number / 10));
+// }
+
+// System.Console.WriteLine(SumItem (N));
+
+/*
+Задача 69: Напишите программу, которая на вход принимает два числа A и B, 
+и возводит число А в целую степень B с помощью рекурсии.
+A = 3; B = 5 -> 243 (3⁵)
+A = 2; B = 3 -> 8
+
+*/
+
+// Задача 69
+
+// System.Console.WriteLine("Write firstNumber: ");
+// int firstNumber = Convert.ToInt32(Console.ReadLine());
+
+// System.Console.WriteLine("Write secondNumber: ");
+// int secondNumber = Convert.ToInt32(Console.ReadLine());
+
+// int PowNumber (int firstNumber, int secondNumber)
+// {
+//         if(secondNumber == 0) return 1; // либо if(secondNumber == 1) return firstNumber
+//         return firstNumber * PowNumber(firstNumber, secondNumber - 1);
+// }
+// System.Console.WriteLine(PowNumber (firstNumber, secondNumber));
+
+///
