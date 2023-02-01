@@ -421,3 +421,111 @@
 // var data = new int[] {1, 2, 3, 4};
 
 // ==========================================================================================
+
+/*
+using System.Diagnostics;
+
+int size = 1_000_000;
+int m = 300;
+int[] array = Enumerable.Range(1, size)
+                        .Select(item => Random.Shared.Next(10))
+                        .ToArray();
+            
+//System.Console.WriteLine($"[{string.Join(", ", array)}]");
+
+Stopwatch sw = new();
+sw.Start();
+
+
+int max = 0;
+for (int i = 0; i < array.Length - m; i++)
+{
+    int t = 0;
+    for (int j = i; j < i + m; j++)
+    {
+        t += array[j];
+                
+    }
+    if (t > max) max = t;
+}
+
+
+sw.Stop();
+System.Console.WriteLine($"time = {sw.ElapsedMilliseconds}");
+System.Console.WriteLine(max);
+
+
+*/
+/*
+using System.Diagnostics;
+
+int size = 1_000_000;
+int m = 500_000;
+int[] array = Enumerable.Range(1, size)
+                        .Select(item => Random.Shared.Next(10))
+                        .ToArray();
+            
+//System.Console.WriteLine($"[{string.Join(", ", array)}]");
+
+
+Stopwatch sw = new();
+sw.Start();
+
+
+int max = 0;
+for (int j = 0; j < m; j++) max += array[j];
+int t = max;
+for (int i = 1; i < array.Length - m; i++)
+{
+    t = t - array[i - 1] + array[i + (m - 1)];
+    if (t > max) max = t;
+}
+
+
+sw.Stop();
+System.Console.WriteLine($"time = {sw.ElapsedMilliseconds}");
+System.Console.WriteLine(max);
+*/
+/*
+void SelectionSort(int[] collection)
+{
+    int size = collection.Length;
+    for (int i = 0; i < size - 1; i++)
+    {
+        int pos = i;
+        for (int j = i + 1; j < size; j++)
+        {
+            if (collection[j] < collection[pos]) pos = j;
+        }
+        int temp = collection[i];
+        collection[i] = collection[pos];
+        collection[pos] = temp;
+    }
+}
+*/
+/*
+using static Sorting;
+
+int[] array = {7, 6, 3, 4, 5, 1, 2, 3};
+System.Console.WriteLine($"{String.Join(',', array)}");
+SelectionSort(array);
+System.Console.WriteLine($"{String.Join(',', array)}");
+*/
+/*
+using static Sorting;
+using static System.Console;
+
+int[] array = {7, 6, 3, 4, 5, 1, 2, 3};
+WriteLine($"{String.Join(',', array)}");
+SelectionSort(array);
+WriteLine($"{String.Join(',', array)}");
+*/
+
+using static Sorting;
+using static Infrastructure;
+
+int[] array = CreateArray(10);
+
+Print(array);
+SelectionSort(array);
+Print(array);
