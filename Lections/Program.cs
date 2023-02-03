@@ -520,7 +520,7 @@ WriteLine($"{String.Join(',', array)}");
 SelectionSort(array);
 WriteLine($"{String.Join(',', array)}");
 */
-
+/*
 using static Sorting;
 using static Infrastructure;
 
@@ -529,3 +529,44 @@ int[] array = CreateArray(10);
 Print(array);
 SelectionSort(array);
 Print(array);
+*/
+using static Sorting;
+using static Infrastructure;
+
+// 15.CreateArray(2, 10)
+//   .Print(" | ")
+//   .SelectionSort()
+//   .Print(" | ")
+//   ;
+
+// int[] arr = 10.CreateArray(10, 20);
+// arr.Print();
+// arr.SelectionSort();
+// arr.Print();
+
+/*
+10.CreateArray(min: 10, max: 50)
+  .Print()
+  .SelectionSort()
+  .Print()
+  ;
+*/
+/*
+Сорьтровка пузырьком
+//Попарно сравниваем элементы массива
+//Если соседние элементы необходимо поменять, тогда их меняем.
+//После обмена проходим массив сначала
+
+0. [3, 1, 5, 0, 7, 9, 8]
+1. [1, 3, 5, 0, 7, 9, 8]
+2. [1, 3, 0, 5, 7, 9, 8]
+3. [1, 0, 3, 5, 7, 9, 8]
+4. [0, 1, 3, 5, 7, 9, 8]
+5. [0, 1, 3, 5, 7, 8, 9]
+6. [0, 1, 3, 5, 7, 8, 9]
+*/
+10.CreateArray(0, 10)
+  .Print()
+  .BoobleTipeSort()
+  .Print()
+  ;
