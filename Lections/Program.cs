@@ -530,8 +530,9 @@ Print(array);
 SelectionSort(array);
 Print(array);
 */
-using static Sorting;
-using static Infrastructure;
+// using static Sorting;
+// using static Infrastructure;
+// using System.Diagnostics;
 
 // 15.CreateArray(2, 10)
 //   .Print(" | ")
@@ -565,8 +566,89 @@ using static Infrastructure;
 5. [0, 1, 3, 5, 7, 8, 9]
 6. [0, 1, 3, 5, 7, 8, 9]
 */
+/*
 10.CreateArray(0, 10)
   .Print()
   .BoobleTipeSort()
   .Print()
   ;
+  */
+/*
+Random random = new Random();
+
+int size= 10 + random.Next(10);
+int[] array = new int[size];
+int index = 0;
+while (index < size)
+{
+    array[index] = random.Next(20);
+    Console.Write(array[index].ToString() + ", ");
+    index = index + 1;
+}
+int i = 0;
+int j = 0;
+int minPose;
+while (i < size)
+{
+    minPose = i;
+    j = i;
+    while (j < size)
+    {
+        if (array[j] < array[minPose]) minPose = j;
+        j ++;
+    }
+    int temp = array[i];
+    array[i] = array[minPose];
+    array[minPose] = temp;
+    i = i + 1;
+}
+System.Console.WriteLine();
+index = 0;
+while (index < size)
+{
+    Console.Write(array[index].ToString() + ", ");
+    index ++;
+}
+*/
+using static Sorting;
+using static Infrastructure;
+using System.Diagnostics;
+
+
+// Stopwatch sw = new();
+// sw.Start();
+
+// 1000.CreateArray(min: 10, max: 100)
+//   .Print()
+//   .SelectionSort()
+//   .Print()
+//   ;
+
+// sw.Stop();
+// System.Console.WriteLine($"time = {sw.ElapsedMilliseconds}");
+
+
+// Stopwatch sw = new();
+// sw.Start();
+
+// 1000.CreateArray(min: 10, max: 100)
+//   .Print()
+//   .BoobleTipeSort()
+//   .Print()
+//   ;
+
+// sw.Stop();
+// System.Console.WriteLine($"time = {sw.ElapsedMilliseconds}");
+
+// Stopwatch sw = new();
+// sw.Start();
+
+// int size = 1000;
+// size.CreateArray(min: 10, max: 100)
+//   .Print()
+//   .SortQuick(0, size - 1)
+//   .Print()
+//   ;
+
+// sw.Stop();
+// System.Console.WriteLine($"time = {sw.ElapsedMilliseconds}");
